@@ -1,0 +1,62 @@
+name: 更新 L4D2 服务器状态
+
+# 每 10 分钟采集一次，把 status.json 提交回 main。
+# 你的 Pages 是「从分支发布」，push 之后会自动重建，不需要改任何 Pages 设置。
+
+on:
+  schedule:
+    # GitHub 的 cron 用 UTC，高峰期会延迟几分钟到十几分钟
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: l4d2-status
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 采集服务器状态
+        env:
+          # 可选：配了之后，UDP 查询失败会自动回退到 Steam Web API
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+        run: |
+          python3 l4d2/fetch_status.py --refresh-minutes 10
+
+      - name: 显示采集摘要
+        run: |
+          python3 - <<'PY'
+          import json
+          with open("l4d2/status.json", encoding="utf-8") as f:
+              d = json.load(f)
+          lines = ["| 服 | 服务器名 | 人数 | 地图 | 状态 |", "| --- | --- | --- | --- | --- |"]
+          for s in d["servers"]:
+              name = (s.get("server_name") or "—").replace("|", "/")
+              state = "在线" if s.get("ok") else "离线：" + str(s.get("error", ""))[:40]
+              lines.append("| %s | %s | %s/%s | %s | %s |" % (
+                  s["name"], name, s.get("players", 0), s.get("max_players", 0),
+                  s.get("map", "—"), state))
+          print("在线 %d/%d，数据源 %s" % (d["online"], d["total"], ",".join(d["sources"]) or "无"))
+          print()
+          print("\n".join(lines))
+          PY
+
+      - name: 提交数据
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add l4d2/status.json
+          if git diff --staged --quiet; then
+            echo "数据无变化，跳过提交"
+          else
+            git commit -m "chore(l4d2): 更新服务器状态"
+            git push
+            echo "已提交，Pages 会自动重建"
+          fi
