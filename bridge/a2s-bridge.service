@@ -1,0 +1,17 @@
+[Unit]
+Description=L4D2 A2S Query Bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/l4d2-bridge
+ExecStart=/usr/bin/python3 /opt/l4d2-bridge/a2s-bridge.py --host 127.0.0.1 --port 8765
+Restart=always
+RestartSec=3
+User=nobody
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

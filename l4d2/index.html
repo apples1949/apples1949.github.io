@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0d12">
+<meta name="description" content="求生之路 2 服务器实时状态：在线人数、地图、更新时间">
+<title>L4D2 服务器状态</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23e0454c'/><text x='50' y='68' font-size='52' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>L4</text></svg>">
+<style>
+  :root{
+    --bg:#0a0d12; --bg2:#0e131a;
+    --panel:#121821; --panel2:#161e28;
+    --line:#1f2a36; --line2:#2a3846;
+    --txt:#e7eef5; --dim:#8b9aab; --dim2:#5f7183;
+    --green:#2ecc8f; --green-dim:rgba(46,204,143,.14);
+    --red:#ef4b52; --red-dim:rgba(239,75,82,.14);
+    --amber:#f0a92c; --blue:#4c9eff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(1100px 520px at 12% -12%, rgba(224,69,76,.13), transparent 62%),
+      radial-gradient(900px 460px at 92% 0%, rgba(76,158,255,.09), transparent 60%),
+      linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+    background-attachment:fixed;
+    color:var(--txt);
+    font-family:"Segoe UI","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    font-size:14px; line-height:1.5; padding-bottom:56px;
+  }
+  .num,.mono{font-family:Consolas,"SF Mono",Menlo,monospace;font-variant-numeric:tabular-nums}
+
+  header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(10,13,18,.94);border-bottom:1px solid var(--line);
+  }
+  .bar{max-width:1320px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+  .logo{
+    width:34px;height:34px;border-radius:9px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(145deg,#e0454c,#8d1b20);box-shadow:0 4px 14px rgba(224,69,76,.36);
+    font-size:15px;font-weight:800;color:#fff;letter-spacing:-1px;
+  }
+  .brand h1{font-size:16px;font-weight:650;letter-spacing:.3px}
+  .brand small{display:block;font-size:11px;color:var(--dim2);font-weight:400;letter-spacing:.6px}
+
+  .stats{display:flex;gap:8px;flex-wrap:wrap}
+  .stat{display:flex;align-items:baseline;gap:6px;padding:6px 12px;border:1px solid var(--line);
+    border-radius:9px;background:var(--panel);font-size:12px;color:var(--dim)}
+  .stat b{font-size:15px;color:var(--txt);font-weight:650}
+  .stat.ok b{color:var(--green)}
+
+  .actions{display:flex;gap:8px;align-items:center}
+  button{font-family:inherit;font-size:13px;cursor:pointer;border:none;background:none;color:inherit}
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border-radius:9px;
+    border:1px solid var(--line2);background:var(--panel2);color:var(--txt);transition:.16s;white-space:nowrap}
+  .btn:hover{border-color:#3b4d5f;background:#1b2531}
+  .btn:active{transform:translateY(1px)}
+  .btn.primary{background:linear-gradient(145deg,#e0454c,#b62c33);border-color:#e0454c;color:#fff;
+    font-weight:600;box-shadow:0 3px 12px rgba(224,69,76,.3)}
+  .btn.primary:hover{background:linear-gradient(145deg,#ee545b,#c3343b)}
+  .btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+  .btn .ic{font-size:14px;line-height:1}
+  .spin{animation:rot .9s linear infinite;display:inline-block}
+  @keyframes rot{to{transform:rotate(360deg)}}
+
+  .toggle{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dim);user-select:none;cursor:pointer}
+  .toggle input{display:none}
+  .track{width:38px;height:21px;border-radius:99px;background:#25313d;position:relative;transition:.2s;flex:none}
+  .track::after{content:"";position:absolute;top:3px;left:3px;width:15px;height:15px;border-radius:50%;
+    background:#77899b;transition:.2s}
+  .toggle input:checked + .track{background:rgba(46,204,143,.32)}
+  .toggle input:checked + .track::after{left:20px;background:var(--green)}
+
+  main{max-width:1320px;margin:0 auto;padding:22px}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(308px,1fr))}
+
+  /* 顶部数据条 */
+  .feed{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    margin-bottom:18px;padding:10px 15px;border-radius:11px;
+    border:1px solid var(--line);background:rgba(18,24,33,.6);
+    font-size:12px;color:var(--dim);
+  }
+  .feed .led{width:7px;height:7px;border-radius:50%;background:var(--green);flex:none;
+    box-shadow:0 0 0 0 rgba(46,204,143,.5);animation:ping 2.4s infinite}
+  .feed.stale{border-color:rgba(240,169,44,.32);background:rgba(240,169,44,.06);color:#c9b48c}
+  .feed.stale .led{background:var(--amber);animation:none}
+  @keyframes ping{
+    0%{box-shadow:0 0 0 0 rgba(46,204,143,.5)}
+    70%{box-shadow:0 0 0 6px rgba(46,204,143,0)}
+    100%{box-shadow:0 0 0 0 rgba(46,204,143,0)}
+  }
+  .feed b{color:var(--txt);font-weight:600}
+  .feed .sep{color:var(--line2)}
+
+  .card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;
+    background:linear-gradient(168deg,var(--panel) 0%,#0f151c 100%);
+    padding:16px 17px 14px;
+    transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:var(--dim2);opacity:.85;transition:.2s}
+  .card[data-status="online"]::before{background:var(--green);box-shadow:0 0 14px rgba(46,204,143,.45)}
+  .card[data-status="offline"]::before{background:var(--red)}
+  .card[data-status="loading"]::before{background:var(--blue);animation:pulsebar 1.2s ease-in-out infinite}
+  @keyframes pulsebar{0%,100%{opacity:.3}50%{opacity:1}}
+  .card:hover{transform:translateY(-2px);border-color:var(--line2);box-shadow:0 10px 26px rgba(0,0,0,.4)}
+
+  .card-head{display:flex;align-items:center;gap:8px;margin-bottom:9px}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.5px;color:#cfdae5;
+    padding:2px 8px;border-radius:6px;background:#1e2833;border:1px solid var(--line2)}
+  .pill{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:11px;
+    padding:3px 9px 3px 8px;border-radius:99px;font-weight:600}
+  .pill i{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+  .pill.online{color:var(--green);background:var(--green-dim)}
+  .pill.online i{animation:ping 2s infinite}
+  .pill.offline{color:var(--red);background:var(--red-dim)}
+  .pill.loading{color:var(--blue);background:rgba(76,158,255,.13)}
+
+  .srv-name{font-size:14px;font-weight:600;line-height:1.35;margin-bottom:12px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+    min-height:38px;word-break:break-all}
+  .srv-name.muted{color:var(--dim2);font-weight:400;font-style:italic;min-height:38px;
+    display:flex;align-items:center;font-size:12.5px}
+
+  .meter{margin-bottom:13px}
+  .meter-top{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}
+  .meter-top .p{font-size:24px;font-weight:700;line-height:1;letter-spacing:-.5px}
+  .meter-top .s{font-size:13px;color:var(--dim2)}
+  .meter-top .cap{margin-left:auto;font-size:11px;color:var(--dim2);letter-spacing:.4px}
+  .bar{height:6px;border-radius:99px;background:#1b2530;overflow:hidden}
+  .bar > span{display:block;height:100%;border-radius:99px;width:0;
+    background:linear-gradient(90deg,#2ecc8f,#42d9a4);
+    transition:width .55s cubic-bezier(.22,1,.36,1),background .3s}
+  .card[data-load="full"] .bar > span{background:linear-gradient(90deg,#f0a92c,#ef4b52)}
+  .card[data-load="high"] .bar > span{background:linear-gradient(90deg,#2ecc8f,#f0a92c)}
+
+  .meta{display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:12px;margin-bottom:12px}
+  .meta > div{display:flex;gap:7px;align-items:center;min-width:0}
+  .meta b{color:var(--dim2);font-weight:400;flex:none;font-size:11.5px}
+  .meta span{color:#c4d1dd;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .ping{font-weight:650}
+  .ping.g{color:var(--green)} .ping.y{color:var(--amber)} .ping.r{color:var(--red)}
+
+  .addr-row{display:flex;gap:6px;align-items:stretch}
+  .addr{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;
+    border:1px dashed var(--line2);background:rgba(255,255,255,.017);
+    font-family:Consolas,"SF Mono",monospace;font-size:11.5px;color:var(--dim);
+    transition:.16s;text-align:left;text-decoration:none}
+  .addr:hover{color:var(--txt);border-color:#3d5163;background:rgba(76,158,255,.07)}
+  .addr .go{margin-left:auto;flex:none;font-size:10.5px;color:var(--dim2);
+    font-family:"Segoe UI",sans-serif;display:inline-flex;align-items:center;gap:3px}
+  .addr:hover .go{color:var(--blue)}
+  .cpbtn{flex:none;width:36px;border-radius:8px;border:1px dashed var(--line2);
+    background:rgba(255,255,255,.017);color:var(--dim2);font-size:13px;
+    display:grid;place-items:center;transition:.16s}
+  .cpbtn:hover{color:var(--txt);border-color:#3d5163;background:rgba(76,158,255,.07)}
+
+  .err{font-size:11.5px;color:#f08a8f;background:rgba(239,75,82,.09);
+    border:1px solid rgba(239,75,82,.22);border-radius:7px;padding:6px 9px;margin-bottom:10px;word-break:break-all}
+
+  /* 提示面板 */
+  .panel{display:none;margin-bottom:18px;padding:18px 20px;border-radius:14px}
+  .panel.show{display:block}
+  .panel.warn{border:1px solid rgba(240,169,44,.3);background:rgba(240,169,44,.07)}
+  .panel.bad{border:1px solid rgba(239,75,82,.3);background:rgba(239,75,82,.07)}
+  .panel h3{font-size:13.5px;margin-bottom:9px;display:flex;align-items:center;gap:8px;color:var(--amber)}
+  .panel.bad h3{color:var(--red)}
+  .panel p{font-size:12.5px;color:#b9c6d3;line-height:1.75}
+  .panel ol{margin:9px 0 0 18px;font-size:12.5px;color:#a9b7c5;line-height:1.9}
+  .panel code,.panel .k{font-family:Consolas,monospace;font-size:12px;color:#8fd6b3;
+    background:#0a0e13;border:1px solid #232f3b;border-radius:5px;padding:1px 6px}
+  .panel .go{margin-top:13px;display:flex;gap:10px;flex-wrap:wrap}
+
+  /* 设置弹层 */
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+    padding:20px;background:rgba(4,7,10,.72);backdrop-filter:blur(5px)}
+  .modal.show{display:flex}
+  .sheet{width:min(560px,100%);max-height:88vh;overflow:auto;border:1px solid var(--line2);
+    border-radius:16px;background:linear-gradient(175deg,#141b24,#0e141b);
+    box-shadow:0 26px 70px rgba(0,0,0,.6)}
+  .sheet header{border-bottom:1px solid var(--line);padding:16px 20px;display:flex;align-items:center;
+    position:static;background:none}
+  .sheet header h2{font-size:14.5px;font-weight:650}
+  .sheet header button{margin-left:auto;color:var(--dim);font-size:19px;line-height:1;padding:0 4px}
+  .sheet header button:hover{color:var(--txt)}
+  .sheet .body{padding:18px 20px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12px;color:var(--dim);margin-bottom:6px}
+  .field label em{font-style:normal;color:var(--dim2);font-size:11px;margin-left:6px}
+  .field input[type=text],.field textarea,.field select{width:100%;padding:9px 11px;border-radius:8px;
+    border:1px solid var(--line2);background:#0a0f15;color:var(--txt);
+    font-family:Consolas,"SF Mono",monospace;font-size:12.5px;outline:none;transition:.15s}
+  .field input:focus,.field textarea:focus,.field select:focus{
+    border-color:#3f7fbf;box-shadow:0 0 0 3px rgba(76,158,255,.14)}
+  .field textarea{min-height:132px;resize:vertical;line-height:1.75}
+  .field .tip{font-size:11.5px;color:var(--dim2);margin-top:5px;line-height:1.6}
+  .row{display:flex;gap:10px}
+  .row .field{flex:1}
+  .sheet footer{display:flex;gap:10px;padding:14px 20px;border-top:1px solid var(--line);
+    position:sticky;bottom:0;background:#0e141b}
+  .sheet footer .right{margin-left:auto;display:flex;gap:10px}
+
+  footer.page{max-width:1320px;margin:26px auto 0;padding:0 22px;font-size:11.5px;
+    color:var(--dim2);display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  footer.page b{color:var(--dim);font-weight:500}
+  .dot{width:4px;height:4px;border-radius:50%;background:var(--dim2)}
+
+  .toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,18px);
+    background:#1b2531;border:1px solid var(--line2);color:var(--txt);
+    padding:10px 18px;border-radius:10px;font-size:12.5px;
+    opacity:0;pointer-events:none;transition:.22s;z-index:200;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);max-width:calc(100vw - 32px)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  .skeleton{height:196px;border-radius:14px;border:1px solid var(--line);
+    background:linear-gradient(100deg,#121821 0%,#1a2330 50%,#121821 100%);
+    background-size:220% 100%;animation:sheen 1.4s ease-in-out infinite}
+  @keyframes sheen{0%{background-position:120% 0}100%{background-position:-20% 0}}
+
+  @media (max-width:680px){
+    .bar{padding:12px 14px;gap:12px}
+    main{padding:14px}
+    .stats{order:3;width:100%}
+    .grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="brand">
+      <div class="logo">L4</div>
+      <div>
+        <h1>L4D2 服务器状态</h1>
+        <small>LEFT 4 DEAD 2 · A2S QUERY</small>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat ok"><b id="s-online">–</b><span>在线</span></div>
+      <div class="stat"><b id="s-players">–</b><span>玩家</span></div>
+      <div class="stat"><b id="s-ago">–</b><span>数据年龄</span></div>
+    </div>
+
+    <div class="actions">
+      <label class="toggle" title="定时重新拉取数据">
+        <input type="checkbox" id="auto" checked>
+        <span class="track"></span>
+        <span>自动</span>
+      </label>
+      <button class="btn" id="btn-refresh"><span class="ic" id="ic-refresh">⟳</span>刷新</button>
+      <button class="btn" id="btn-settings"><span class="ic">⚙</span>设置</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="feed" id="feed">
+    <span class="led"></span>
+    <span id="feed-text">正在读取数据…</span>
+  </div>
+
+  <div class="panel bad" id="fatal">
+    <h3>✕ 没能读到数据文件</h3>
+    <p id="fatal-text"></p>
+    <div class="go"><button class="btn" id="btn-retry">重试</button>
+      <button class="btn" id="btn-open-settings">设置</button></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <footer class="page">
+    <span><b>数据源</b> A2S_INFO / A2S_PLAYER，GitHub Actions 定时采集</span>
+    <span class="dot"></span>
+    <span>采集于 <b id="last-update">–</b></span>
+    <span class="dot"></span>
+    <span id="mode-label">静态快照</span>
+  </footer>
+</main>
+
+<div class="modal" id="modal">
+  <div class="sheet">
+    <header>
+      <h2>设置</h2>
+      <button id="btn-close" title="关闭">×</button>
+    </header>
+    <div class="body">
+      <div class="field">
+        <label>数据模式</label>
+        <select id="inp-mode">
+          <option value="static">静态快照（GitHub Actions 定时生成 status.json）</option>
+          <option value="bridge">实时端点（自己搭的 A2S 查询桥）</option>
+        </select>
+        <div class="tip">发布到 GitHub Pages 用静态快照；本地调试想要秒级实时可切实时端点。</div>
+      </div>
+
+      <div class="field" id="row-snapshot">
+        <label>数据文件路径</label>
+        <input type="text" id="inp-snapshot" placeholder="status.json">
+        <div class="tip">相对路径即可，与 index.html 同目录。</div>
+      </div>
+
+      <div class="field" id="row-bridge" style="display:none">
+        <label>查询端点地址 <em>例 https://q.example.com</em></label>
+        <div class="row">
+          <input type="text" id="inp-bridge" placeholder="https://q.example.com" style="flex:1">
+          <button class="btn" id="btn-test" style="flex:none">测试</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>页面自动重新拉取</label>
+          <select id="inp-refresh">
+            <option value="30">30 秒</option>
+            <option value="60">1 分钟</option>
+            <option value="120">2 分钟</option>
+            <option value="0">不自动</option>
+          </select>
+        </div>
+        <div class="field" id="row-timeout" style="display:none">
+          <label>单次超时</label>
+          <select id="inp-timeout">
+            <option value="1000">1 秒</option>
+            <option value="1500">1.5 秒</option>
+            <option value="2500">2.5 秒</option>
+            <option value="4000">4 秒</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" id="row-servers" style="display:none">
+        <label>服务器列表 <em>每行一个：名称 | 地址</em></label>
+        <textarea id="inp-servers" spellcheck="false"></textarea>
+      </div>
+    </div>
+    <footer>
+      <button class="btn" id="btn-reset">恢复站点配置</button>
+      <div class="right">
+        <button class="btn" id="btn-cancel">取消</button>
+        <button class="btn primary" id="btn-save">保存</button>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var BUILTIN_SERVERS = [
+    { name: "1服",   addr: "1.15.122.209:27015"  },
+    { name: "2服",   addr: "1.15.62.95:27015"    },
+    { name: "3服",   addr: "nb.xubw.cn:24085"    },
+    { name: "4服",   addr: "180.188.21.24:27030" },
+    { name: "5服",   addr: "180.188.21.24:27031" },
+    { name: "高抗",  addr: "180.188.21.24:27032" },
+    { name: "高抗2", addr: "180.188.21.24:27033" }
+  ];
+  var LS = { cfg: "l4d2.cfg.v3", servers: "l4d2.servers.v3" };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var FILE = window.L4D2_CONFIG || {};
+  var QS = new URLSearchParams(location.search);
+
+  var state = {
+    cfg: {}, servers: [], rows: [], meta: null,
+    timer: null, busy: false, fatal: false
+  };
+
+  /* ------------------------------------------------ 配置 */
+  function normalizeServer(s, i) {
+    if (!s) return null;
+    var addr = String(s.addr || "").trim();
+    if (!addr || addr.indexOf(":") < 0) return null;
+    return { name: String(s.name || ("服务器" + (i + 1))).trim(), addr: addr };
+  }
+
+  function parseServerText(text) {
+    var out = [];
+    String(text || "").split(/\r?\n/).forEach(function (line, i) {
+      line = line.trim();
+      if (!line) return;
+      var parts = line.split("|");
+      var s = normalizeServer({
+        name: parts.length > 1 ? parts[0].trim() : "服务器" + (i + 1),
+        addr: (parts.length > 1 ? parts.slice(1).join("|") : parts[0]).trim()
+      }, i);
+      if (s) out.push(s);
+    });
+    return out;
+  }
+
+  function resolveConfig() {
+    var cfg = {
+      mode: (FILE.mode === "bridge" ? "bridge" : "static"),
+      snapshot: String(FILE.snapshot || "status.json"),
+      bridge: String(FILE.bridge || ""),
+      refreshSeconds: Number(FILE.refreshSeconds) || 60,
+      timeout: Number(FILE.timeout) || 1500
+    };
+    var servers = [];
+    if (Array.isArray(FILE.servers)) {
+      FILE.servers.forEach(function (s, i) { var n = normalizeServer(s, i); if (n) servers.push(n); });
+    }
+    if (!servers.length) servers = BUILTIN_SERVERS.slice();
+
+    try {
+      var c = JSON.parse(localStorage.getItem(LS.cfg) || "null");
+      if (c) {
+        if (c.mode) cfg.mode = c.mode === "bridge" ? "bridge" : "static";
+        if (c.snapshot) cfg.snapshot = c.snapshot;
+        if (typeof c.bridge === "string") cfg.bridge = c.bridge;
+        if (c.refreshSeconds !== undefined) cfg.refreshSeconds = Number(c.refreshSeconds);
+        if (c.timeout) cfg.timeout = Number(c.timeout);
+      }
+      var arr = JSON.parse(localStorage.getItem(LS.servers) || "null");
+      if (Array.isArray(arr) && arr.length) {
+        var list = [];
+        arr.forEach(function (s, i) { var n = normalizeServer(s, i); if (n) list.push(n); });
+        if (list.length) servers = list;
+      }
+    } catch (e) {}
+
+    if (QS.get("mode") === "bridge") cfg.mode = "bridge";
+    if (QS.get("snapshot")) cfg.snapshot = QS.get("snapshot");
+    if (QS.get("bridge")) cfg.bridge = QS.get("bridge");
+    if (!cfg.bridge && location.protocol === "file:") cfg.bridge = "http://127.0.0.1:8765";
+
+    state.cfg = cfg;
+    state.servers = servers;
+  }
+
+  function persist() {
+    try {
+      localStorage.setItem(LS.cfg, JSON.stringify({
+        mode: state.cfg.mode, snapshot: state.cfg.snapshot, bridge: state.cfg.bridge,
+        refreshSeconds: state.cfg.refreshSeconds, timeout: state.cfg.timeout
+      }));
+      localStorage.setItem(LS.servers, JSON.stringify(state.servers));
+    } catch (e) {}
+  }
+
+  /* ------------------------------------------------ 工具 */
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function cleanName(s) {
+    return String(s || "").replace(/\^[0-9]/g, "")
+      .replace(/[\x00-\x08\x0b\x0c\x0e-\x1f]/g, "").replace(/\s+/g, " ").trim();
+  }
+  function copyText(text) {
+    var ok = function () { toast("已复制：" + text); };
+    var fb = function () {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.cssText = "position:fixed;left:-9999px";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); ok(); } catch (e) { toast("复制失败"); }
+      document.body.removeChild(ta);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fb);
+    else fb();
+  }
+  var toastTimer = null;
+  function toast(msg) {
+    var el = $("toast"); el.textContent = msg; el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove("show"); }, 2000);
+  }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function clock(ms) {
+    var d = new Date(ms);
+    return pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds());
+  }
+  function agoText(ms) {
+    if (!ms) return "–";
+    var diff = Date.now() - ms;
+    if (diff < 0) diff = 0;
+    var m = Math.floor(diff / 60000);
+    if (m < 1) return "刚刚";
+    if (m < 60) return m + " 分钟前";
+    var h = Math.floor(m / 60);
+    if (h < 24) return h + " 小时前";
+    return Math.floor(h / 24) + " 天前";
+  }
+  function pingClass(ms) {
+    if (ms == null) return "";
+    if (ms < 60) return "g";
+    if (ms < 130) return "y";
+    return "r";
+  }
+  function isMixed(url) {
+    return location.protocol === "https:" && /^http:\/\//i.test(url) &&
+      !/^http:\/\/(127\.0\.0\.1|localhost)(:|\/|$)/i.test(url);
+  }
+
+  /* ------------------------------------------------ 数据加载 */
+  function normalizeStatic(s) {
+    return {
+      label: s.name || s.addr,
+      addr: s.addr,
+      status: s.ok ? "ok" : "fail",
+      srv: s.server_name || "",
+      map: s.map || "",
+      players: s.players | 0,
+      max: s.max_players | 0,
+      bots: s.bots | 0,
+      version: s.version || "",
+      vac: !!s.vac,
+      ping: (typeof s.ping === "number" ? s.ping : null),
+      src: s.source || "",
+      err: s.error || "",
+      names: (s.players_list || []).map(function (p) { return p.name; })
+    };
+  }
+
+  function loadStatic(quiet) {
+    if (state.busy) return;
+    state.busy = true;
+    if (!quiet) { $("ic-refresh").classList.add("spin"); $("btn-refresh").disabled = true; }
+
+    var base = state.cfg.snapshot;
+    var url = base + (base.indexOf("?") < 0 ? "?" : "&") + "t=" + Date.now();
+
+    fetch(url, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (j) {
+        state.fatal = false;
+        $("fatal").classList.remove("show");
+        state.meta = {
+          generated: j.generated_at_ms || (j.generated_at ? Date.parse(j.generated_at) : Date.now()),
+          refresh: j.refresh_minutes || 10,
+          sources: j.sources || []
+        };
+        state.rows = (j.servers || []).map(normalizeStatic);
+        render(true);
+      })
+      .catch(function (err) {
+        state.fatal = true;
+        $("fatal-text").textContent =
+          "读不到 " + base + "（" + (err && err.message || "未知错误") + "）。" +
+          "如果仓库刚建好，去 Actions 页手动运行一次「更新服务器状态」，它会生成这个文件。";
+        $("fatal").classList.add("show");
+        state.rows = [];
+        render(false);
+      })
+      .then(function () {
+        state.busy = false;
+        $("ic-refresh").classList.remove("spin");
+        $("btn-refresh").disabled = false;
+      });
+  }
+
+  function queryOne(server) {
+    var ctrl = null, timer = null;
+    if (typeof AbortController !== "undefined") {
+      ctrl = new AbortController();
+      timer = setTimeout(function () { ctrl.abort(); }, state.cfg.timeout + 1200);
+    }
+    var url = state.cfg.bridge.replace(/\/+$/, "") + "/query?addr=" + encodeURIComponent(server.addr);
+    return fetch(url, { signal: ctrl ? ctrl.signal : undefined, cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (j) { clearTimeout(timer); return j; })
+      .catch(function (e) {
+        clearTimeout(timer);
+        var msg = (e && e.name === "AbortError") ? "请求超时"
+          : (/Failed to fetch|NetworkError|Load failed/i.test((e && e.message) || "") ? "连不上查询端点" : (e && e.message) || "查询失败");
+        return { ok: false, error: msg };
+      });
+  }
+
+  function loadBridge() {
+    if (state.busy) return;
+    if (isMixed(state.cfg.bridge)) {
+      $("fatal-text").textContent = "页面是 HTTPS，端点却是 HTTP，浏览器会按混合内容拦截。请给端点套上 HTTPS。";
+      $("fatal").classList.add("show");
+      return;
+    }
+    state.busy = true;
+    $("ic-refresh").classList.add("spin");
+    $("btn-refresh").disabled = true;
+    $("fatal").classList.remove("show");
+
+    state.rows = state.servers.map(function (s) {
+      return { label: s.name, addr: s.addr, status: "loading" };
+    });
+    render(false);
+
+    var tasks = state.servers.map(function (s) {
+      return queryOne(s).then(function (d) {
+        return {
+          label: s.name, addr: s.addr,
+          status: d && d.ok ? "ok" : "fail",
+          srv: d && d.name || "",
+          map: d && d.map || "",
+          players: (d && d.players) | 0,
+          max: (d && d.max_players) | 0,
+          bots: (d && d.bots) | 0,
+          version: d && d.version || "",
+          vac: !!(d && d.vac),
+          ping: (d && typeof d.ping === "number") ? d.ping : null,
+          src: d && d.ok ? "a2s" : "",
+          err: d && d.error || "",
+          names: (d && d.playerlist || []).map(function (p) { return p.name; })
+        };
+      });
+    });
+
+    Promise.all(tasks).then(function (rows) {
+      state.rows = rows;
+      state.meta = { generated: Date.now(), refresh: Math.max(1, Math.round(state.cfg.refreshSeconds / 60)), sources: ["a2s"] };
+      state.busy = false;
+      $("ic-refresh").classList.remove("spin");
+      $("btn-refresh").disabled = false;
+      render(true);
+    });
+  }
+
+  function load(quiet) {
+    if (state.cfg.mode === "bridge") loadBridge();
+    else loadStatic(quiet);
+  }
+
+  /* ------------------------------------------------ 渲染 */
+  function render(hasData) {
+    var grid = $("grid");
+
+    if (!state.rows.length) {
+      grid.innerHTML = hasData ? "" :
+        '<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>';
+    } else {
+      var frag = document.createDocumentFragment();
+      state.rows.forEach(function (r) { frag.appendChild(buildCard(r)); });
+      grid.innerHTML = "";
+      grid.appendChild(frag);
+    }
+
+    var online = 0, players = 0, maxp = 0;
+    state.rows.forEach(function (r) {
+      if (r.status === "ok") { online++; players += r.players; maxp += r.max; }
+    });
+
+    $("s-online").textContent = state.rows.length ? online + " / " + state.rows.length : "–";
+    $("s-players").textContent = state.rows.length ? players + (maxp ? " / " + maxp : "") : "–";
+
+    var gen = state.meta && state.meta.generated;
+    $("s-ago").textContent = gen ? agoText(gen) : "–";
+    $("last-update").textContent = gen ? clock(gen) : "–";
+
+    // 数据条
+    var feed = $("feed");
+    if (!gen) {
+      feed.className = "feed";
+      $("feed-text").textContent = "正在读取数据…";
+    } else {
+      var mins = state.meta.refresh || 10;
+      var ageMin = (Date.now() - gen) / 60000;
+      var stale = ageMin > mins * 2.5;
+      feed.className = "feed" + (stale ? " stale" : "");
+      var srcTxt = (state.meta.sources || []).map(function (s) {
+        return s === "a2s" ? "A2S 直查" : s === "steam" ? "Steam API" : s;
+      }).join(" / ") || "A2S 直查";
+      $("feed-text").innerHTML =
+        (stale ? "<b>数据可能已过期</b>" : "数据已同步") +
+        '<span class="sep"> · </span>' +
+        "采集于 <b>" + clock(gen) + "</b>（" + agoText(gen) + "）" +
+        '<span class="sep"> · </span>每 ' + mins + " 分钟自动采集" +
+        '<span class="sep"> · </span>来源 ' + esc(srcTxt);
+    }
+
+    $("mode-label").textContent = state.cfg.mode === "bridge" ? "实时端点" : "静态快照";
+  }
+
+  function buildCard(r) {
+    var el = document.createElement("article");
+    el.className = "card";
+    var online = r.status === "ok";
+    el.dataset.status = online ? "online" : r.status === "fail" ? "offline" : "loading";
+
+    var pill = online ? '<span class="pill online"><i></i>在线</span>'
+      : r.status === "fail" ? '<span class="pill offline"><i></i>离线</span>'
+      : '<span class="pill loading"><i></i>查询中</span>';
+
+    var body = "";
+
+    if (online) {
+      var pct = r.max ? Math.min(100, (r.players / r.max) * 100) : 0;
+      el.dataset.load = pct >= 100 ? "full" : pct >= 75 ? "high" : "norm";
+      var nm = cleanName(r.srv);
+      var tip = r.names && r.names.length ? r.names.join("\n") : "";
+      // 静态模式下的 ping 是采集机的 RTT，对访客无意义，改为显示数据源
+      var pingCell = (state.cfg.mode === "bridge" && r.ping != null)
+        ? '<div><b>延迟</b><span class="ping num ' + pingClass(r.ping) + '">' + r.ping + " ms</span></div>"
+        : "<div><b>来源</b><span>" + (r.src === "steam" ? "Steam API" : "A2S 直查") + "</span></div>";
+
+      body =
+        '<h2 class="srv-name" title="' + esc(tip) + '">' + esc(nm || "未命名服务器") + "</h2>" +
+        '<div class="meter">' +
+          '<div class="meter-top">' +
+            '<span class="p num">' + r.players + "</span>" +
+            '<span class="s">/ ' + r.max + "</span>" +
+            '<span class="cap">' + (r.bots ? "含 Bot " + r.bots : "玩家") + "</span>" +
+          "</div>" +
+          '<div class="bar"><span style="width:' + pct + '%"></span></div>' +
+        "</div>" +
+        '<div class="meta">' +
+          '<div><b>地图</b><span title="' + esc(r.map) + '">' + esc(r.map || "–") + "</span></div>" +
+          pingCell +
+          "<div><b>版本</b><span>" + esc(r.version || "–") + "</span></div>" +
+          "<div><b>VAC</b><span>" + (r.vac ? "已开启" : "关闭") + "</span></div>" +
+        "</div>";
+
+    } else if (r.status === "fail") {
+      body =
+        '<h2 class="srv-name muted">未获取到服务器信息</h2>' +
+        '<div class="err">' + esc(r.err || "无响应") + "</div>" +
+        '<div class="meta">' +
+          '<div style="grid-column:1/-1"><b>说明</b><span>服务器可能已关闭、端口未放行，或查询被拦截</span></div>' +
+          '<div style="grid-column:1/-1"><b>&nbsp;</b><span>&nbsp;</span></div>' +
+          '<div style="grid-column:1/-1"><b>&nbsp;</b><span>&nbsp;</span></div>' +
+        "</div>";
+
+    } else {
+      body =
+        '<h2 class="srv-name muted">正在查询…</h2>' +
+        '<div class="meter">' +
+          '<div class="meter-top"><span class="p num" style="color:#3b4d5f">--</span><span class="s">/ --</span></div>' +
+          '<div class="bar"><span style="width:0%"></span></div>' +
+        "</div>" +
+        '<div class="meta"><div><b>地图</b><span>–</span></div><div><b>延迟</b><span>–</span></div>' +
+        '<div><b>&nbsp;</b><span>&nbsp;</span></div><div><b>&nbsp;</b><span>&nbsp;</span></div></div>';
+    }
+
+    el.innerHTML =
+      '<div class="card-head"><span class="tag">' + esc(r.label) + "</span>" + pill + "</div>" +
+      body +
+      '<div class="addr-row">' +
+        '<a class="addr" href="steam://connect/' + esc(r.addr) + '" title="用 Steam 打开并进入该服务器">' +
+          "<span>" + esc(r.addr) + "</span>" +
+          '<span class="go">进入服务器 ›</span>' +
+        "</a>" +
+        '<button class="cpbtn" data-addr="' + esc(r.addr) + '" title="复制 connect 指令">⧉</button>' +
+      "</div>";
+
+    return el;
+  }
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest) return;
+
+    // 复制按钮
+    var cp = e.target.closest(".cpbtn");
+    if (cp) {
+      copyText("connect " + cp.getAttribute("data-addr"));
+      return;
+    }
+
+    // 进入服务器：交给 steam:// 协议，若浏览器仍在前台说明没唤起成功
+    var link = e.target.closest("a.addr");
+    if (link) {
+      setTimeout(function () {
+        if (document.hasFocus()) {
+          toast("没能唤起 Steam？点右侧 ⧉ 复制地址，在游戏控制台输入 connect");
+        }
+      }, 1600);
+    }
+  });
+
+  /* ------------------------------------------------ 定时 */
+  function schedule() {
+    clearInterval(state.timer);
+    var sec = state.cfg.refreshSeconds;
+    if (!sec || !$("auto").checked) return;
+    state.timer = setInterval(function () { load(true); }, sec * 1000);
+  }
+  $("auto").addEventListener("change", function () {
+    schedule();
+    if (this.checked) { load(true); toast("自动刷新：" + state.cfg.refreshSeconds + " 秒"); }
+    else toast("已停止自动刷新");
+  });
+  $("btn-refresh").addEventListener("click", function () { load(false); });
+  $("btn-retry").addEventListener("click", function () { load(false); });
+
+  /* ------------------------------------------------ 设置 */
+  function syncForm() {
+    var m = $("inp-mode").value;
+    $("row-snapshot").style.display = m === "static" ? "" : "none";
+    $("row-bridge").style.display = m === "bridge" ? "" : "none";
+    $("row-servers").style.display = m === "bridge" ? "" : "none";
+    $("row-timeout").style.display = m === "bridge" ? "" : "none";
+  }
+  function openSettings() {
+    $("inp-mode").value = state.cfg.mode;
+    $("inp-snapshot").value = state.cfg.snapshot;
+    $("inp-bridge").value = state.cfg.bridge || "";
+    $("inp-refresh").value = String(state.cfg.refreshSeconds);
+    $("inp-timeout").value = String(state.cfg.timeout);
+    $("inp-servers").value = state.servers.map(function (s) { return s.name + " | " + s.addr; }).join("\n");
+    syncForm();
+    $("modal").classList.add("show");
+  }
+  function closeSettings() { $("modal").classList.remove("show"); }
+
+  $("inp-mode").addEventListener("change", syncForm);
+  $("btn-settings").addEventListener("click", openSettings);
+  $("btn-open-settings").addEventListener("click", openSettings);
+  $("btn-close").addEventListener("click", closeSettings);
+  $("btn-cancel").addEventListener("click", closeSettings);
+  $("modal").addEventListener("click", function (e) { if (e.target === $("modal")) closeSettings(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSettings(); });
+
+  $("btn-test").addEventListener("click", function () {
+    var raw = $("inp-bridge").value.trim().replace(/\/+$/, "");
+    if (!raw) { toast("先填端点地址"); return; }
+    var btn = this; btn.disabled = true; btn.textContent = "测试中…";
+    fetch(raw + "/ping", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (j) { toast(j && j.ok ? "端点正常" : "端点返回异常"); })
+      .catch(function () { toast("连不上：" + raw); })
+      .then(function () { btn.disabled = false; btn.textContent = "测试"; });
+  });
+
+  $("btn-save").addEventListener("click", function () {
+    var mode = $("inp-mode").value === "bridge" ? "bridge" : "static";
+    var bridge = $("inp-bridge").value.trim().replace(/\/+$/, "");
+    if (mode === "bridge" && !bridge) { toast("实时模式要先填端点地址"); return; }
+    if (bridge && !/^https?:\/\//i.test(bridge)) { toast("端点需以 http:// 或 https:// 开头"); return; }
+
+    var list = parseServerText($("inp-servers").value);
+    if (mode === "bridge" && !list.length) { toast("服务器列表为空或格式不对"); return; }
+
+    state.cfg.mode = mode;
+    state.cfg.snapshot = $("inp-snapshot").value.trim() || "status.json";
+    state.cfg.bridge = bridge;
+    state.cfg.refreshSeconds = parseInt($("inp-refresh").value, 10) || 0;
+    state.cfg.timeout = parseInt($("inp-timeout").value, 10) || 1500;
+    if (list.length) state.servers = list;
+
+    persist();
+    closeSettings();
+    schedule();
+    load(false);
+    toast("已保存");
+  });
+
+  $("btn-reset").addEventListener("click", function () {
+    $("inp-mode").value = FILE.mode === "bridge" ? "bridge" : "static";
+    $("inp-snapshot").value = String(FILE.snapshot || "status.json");
+    $("inp-bridge").value = String(FILE.bridge || "");
+    $("inp-refresh").value = String(Number(FILE.refreshSeconds) || 60);
+    $("inp-timeout").value = String(Number(FILE.timeout) || 1500);
+    $("inp-servers").value = (Array.isArray(FILE.servers) ? FILE.servers : BUILTIN_SERVERS)
+      .map(function (s) { return s.name + " | " + s.addr; }).join("\n");
+    syncForm();
+    toast("已填入站点配置，点保存生效");
+  });
+
+  /* 诊断：?dbg=1 */
+  if (QS.get("dbg")) {
+    var dbg = document.createElement("div");
+    dbg.style.cssText = "position:fixed;left:0;top:0;z-index:99999;background:#0f0;color:#000;" +
+      "font:12px Consolas,monospace;padding:3px 7px;white-space:pre";
+    document.body.appendChild(dbg);
+    setInterval(function () {
+      dbg.textContent = "mode=" + state.cfg.mode + " rows=" + state.rows.length +
+        " scrollY=" + window.scrollY + " innerH=" + window.innerHeight +
+        " gen=" + (state.meta && state.meta.generated);
+    }, 500);
+  }
+
+  /* ------------------------------------------------ 启动 */
+  resolveConfig();
+  $("auto").checked = state.cfg.refreshSeconds > 0;
+  render(false);
+  load(false);
+  schedule();
+})();
+</script>
+</body>
+</html>

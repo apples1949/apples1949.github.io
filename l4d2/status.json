@@ -1,0 +1,454 @@
+{
+ "generated_at": "2026-11-16T09:27:45Z",
+ "generated_at_ms": 1794821265098,
+ "refresh_minutes": 10,
+ "runner": "local",
+ "online": 7,
+ "total": 7,
+ "sources": [
+  "a2s"
+ ],
+ "servers": [
+  {
+   "name": "1服",
+   "addr": "1.15.122.209:27015",
+   "server_name": "抽象进阶包抗服1服[进阶包抗]",
+   "map": "c1m1_hotel",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 8,
+   "max_players": 12,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 83,
+   "players_list": [
+    {
+     "name": "标记了一个位置",
+     "score": 3,
+     "seconds": 4635
+    },
+    {
+     "name": "=v=",
+     "score": 12,
+     "seconds": 4182
+    },
+    {
+     "name": "这个知识怎么不进脑",
+     "score": 3,
+     "seconds": 3670
+    },
+    {
+     "name": "神隐的境界妖",
+     "score": 3,
+     "seconds": 2836
+    },
+    {
+     "name": "小野芥子",
+     "score": 2,
+     "seconds": 1293
+    },
+    {
+     "name": "轻如晚雾万山遥",
+     "score": 4,
+     "seconds": 750
+    },
+    {
+     "name": "大黄",
+     "score": 0,
+     "seconds": 647
+    },
+    {
+     "name": "(S)炒酸奶",
+     "score": 0,
+     "seconds": 331
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
+   "ip": "1.15.122.209",
+   "checked_at_ms": 1794821264117,
+   "elapsed_ms": 175
+  },
+  {
+   "name": "2服",
+   "addr": "1.15.62.95:27015",
+   "server_name": "抽象进阶包抗服2服[进阶包抗]",
+   "map": "c2m2_fairgrounds",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 8,
+   "max_players": 12,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 83,
+   "players_list": [
+    {
+     "name": "七二一",
+     "score": 5,
+     "seconds": 1540
+    },
+    {
+     "name": "WWWWWWWW",
+     "score": -1,
+     "seconds": 1380
+    },
+    {
+     "name": "乳汁",
+     "score": 7,
+     "seconds": 490
+    },
+    {
+     "name": "贪吃鬼",
+     "score": 0,
+     "seconds": 477
+    },
+    {
+     "name": "皇上",
+     "score": 1,
+     "seconds": 464
+    },
+    {
+     "name": "Habsburg",
+     "score": 8,
+     "seconds": 462
+    },
+    {
+     "name": "我即是那迫近的风暴",
+     "score": 1,
+     "seconds": 401
+    },
+    {
+     "name": "战役高手",
+     "score": -1,
+     "seconds": 37
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
+   "ip": "1.15.62.95",
+   "checked_at_ms": 1794821264282,
+   "elapsed_ms": 164
+  },
+  {
+   "name": "3服",
+   "addr": "nb.xubw.cn:24085",
+   "server_name": "抽象进阶包抗服3服[进阶包抗]",
+   "map": "c5m2_park",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 10,
+   "max_players": 12,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 78,
+   "players_list": [
+    {
+     "name": "ᗜᴗᗜ",
+     "score": 0,
+     "seconds": 11490
+    },
+    {
+     "name": "满穗",
+     "score": 0,
+     "seconds": 10645
+    },
+    {
+     "name": "我独自升级vol.7",
+     "score": 0,
+     "seconds": 10636
+    },
+    {
+     "name": "miku米",
+     "score": 0,
+     "seconds": 8039
+    },
+    {
+     "name": "AJei",
+     "score": 0,
+     "seconds": 6614
+    },
+    {
+     "name": "Retr0",
+     "score": 0,
+     "seconds": 5845
+    },
+    {
+     "name": "(S)绝恋世家",
+     "score": 0,
+     "seconds": 4328
+    },
+    {
+     "name": "提瓦特第一突谷風 天音",
+     "score": 0,
+     "seconds": 4138
+    },
+    {
+     "name": "Little leaf",
+     "score": 0,
+     "seconds": 2964
+    },
+    {
+     "name": "(S)重生之我是持枪特感",
+     "score": 0,
+     "seconds": 1051
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
+   "ip": "180.188.24.113",
+   "checked_at_ms": 1794821264455,
+   "elapsed_ms": 172
+  },
+  {
+   "name": "4服",
+   "addr": "180.188.21.24:27030",
+   "server_name": "抽象进阶包抗服4服[多人包抗]",
+   "map": "c8m3_sewers",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 25,
+   "max_players": 26,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 98,
+   "players_list": [
+    {
+     "name": "青y",
+     "score": 0,
+     "seconds": 7692
+    },
+    {
+     "name": "AKK",
+     "score": 2,
+     "seconds": 3184
+    },
+    {
+     "name": "芙",
+     "score": 1,
+     "seconds": 1621
+    },
+    {
+     "name": "莫个性",
+     "score": 5,
+     "seconds": 1416
+    },
+    {
+     "name": "zz太难了",
+     "score": 0,
+     "seconds": 1366
+    },
+    {
+     "name": "叶良辰",
+     "score": 2,
+     "seconds": 1352
+    },
+    {
+     "name": "是散兵啊",
+     "score": 0,
+     "seconds": 1319
+    },
+    {
+     "name": "ele walker",
+     "score": 2,
+     "seconds": 1180
+    },
+    {
+     "name": "Liberation-723",
+     "score": 0,
+     "seconds": 1179
+    },
+    {
+     "name": "小chen",
+     "score": 2,
+     "seconds": 1160
+    },
+    {
+     "name": "2862179835",
+     "score": 0,
+     "seconds": 1142
+    },
+    {
+     "name": "nvfehd",
+     "score": 0,
+     "seconds": 1039
+    },
+    {
+     "name": "丁棍儿",
+     "score": 0,
+     "seconds": 905
+    },
+    {
+     "name": "他二大爷",
+     "score": 4,
+     "seconds": 806
+    },
+    {
+     "name": "情舩",
+     "score": 0,
+     "seconds": 776
+    },
+    {
+     "name": "laurel",
+     "score": 0,
+     "seconds": 717
+    },
+    {
+     "name": "亡灵熊战士",
+     "score": 0,
+     "seconds": 686
+    },
+    {
+     "name": "杀机笑传之捶捶背",
+     "score": 0,
+     "seconds": 621
+    },
+    {
+     "name": "(S)U?ェ?*U",
+     "score": 0,
+     "seconds": 602
+    },
+    {
+     "name": "wolfort",
+     "score": 0,
+     "seconds": 592
+    },
+    {
+     "name": "祖冲之",
+     "score": 1,
+     "seconds": 349
+    },
+    {
+     "name": "天道总司",
+     "score": 0,
+     "seconds": 214
+    },
+    {
+     "name": "小鸟游六花",
+     "score": 1,
+     "seconds": 212
+    },
+    {
+     "name": "傻狗悟道震乾坤",
+     "score": 0,
+     "seconds": 197
+    },
+    {
+     "name": "小碎骨",
+     "score": 4,
+     "seconds": 142
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
+   "ip": "180.188.21.24",
+   "checked_at_ms": 1794821264621,
+   "elapsed_ms": 165
+  },
+  {
+   "name": "5服",
+   "addr": "180.188.21.24:27031",
+   "server_name": "抽象进阶包抗服5服[多人包抗]",
+   "map": "c2m1_highway",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 0,
+   "max_players": 26,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 93,
+   "players_list": [],
+   "source": "a2s",
+   "ok": true,
+   "ip": "180.188.21.24",
+   "checked_at_ms": 1794821264799,
+   "elapsed_ms": 178
+  },
+  {
+   "name": "高抗",
+   "addr": "180.188.21.24:27032",
+   "server_name": "纯净多人进阶包抗服［多人高抗］",
+   "map": "c2m2_fairgrounds",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 4,
+   "max_players": 28,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 83,
+   "players_list": [
+    {
+     "name": "iwleyfn0590",
+     "score": 19,
+     "seconds": 850
+    },
+    {
+     "name": "刚看过广告",
+     "score": 0,
+     "seconds": 81
+    },
+    {
+     "name": "哎呀",
+     "score": 0,
+     "seconds": 39
+    },
+    {
+     "name": "ggbond.",
+     "score": 0,
+     "seconds": 15
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
+   "ip": "180.188.21.24",
+   "checked_at_ms": 1794821264954,
+   "elapsed_ms": 155
+  },
+  {
+   "name": "高抗2",
+   "addr": "180.188.21.24:27033",
+   "server_name": "纯净多人进阶包抗服［多人高抗］",
+   "map": "c2m1_highway",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 0,
+   "max_players": 28,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 71,
+   "players_list": [],
+   "source": "a2s",
+   "ok": true,
+   "ip": "180.188.21.24",
+   "checked_at_ms": 1794821265098,
+   "elapsed_ms": 143
+  }
+ ]
+}
