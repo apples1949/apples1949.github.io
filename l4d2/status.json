@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-16T09:48:20Z",
- "generated_at_ms": 1794822500561,
+ "generated_at": "2026-11-16T09:50:37Z",
+ "generated_at_ms": 1794822637422,
  "refresh_minutes": 10,
- "runner": "43842988307",
+ "runner": "43843324569",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,80 +13,70 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c1m2_streets",
+   "map": "c1m3_mall",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 11,
+   "players": 9,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 428,
+   "ping": 329,
    "players_list": [
     {
-     "name": "洛基恐怖秀",
-     "score": 15,
-     "seconds": 5853
+     "name": "𝗘𝘀𝘁𝗵𝗲𝗿",
+     "score": 0,
+     "seconds": 5990
     },
     {
      "name": "=v=",
-     "score": 18,
-     "seconds": 5399
+     "score": 0,
+     "seconds": 5537
     },
     {
      "name": "大黄",
-     "score": 4,
-     "seconds": 1864
+     "score": 0,
+     "seconds": 2002
     },
     {
      "name": "绝恋世家",
-     "score": 13,
-     "seconds": 1190
+     "score": 0,
+     "seconds": 1327
     },
     {
      "name": "覆膜",
-     "score": 6,
-     "seconds": 982
+     "score": 0,
+     "seconds": 1119
     },
     {
      "name": "Retr0",
-     "score": 11,
-     "seconds": 978
+     "score": 0,
+     "seconds": 1115
     },
     {
      "name": "我独自升级vol.7",
-     "score": 3,
-     "seconds": 942
-    },
-    {
-     "name": "轻如晚雾万山遥",
-     "score": 3,
-     "seconds": 904
-    },
-    {
-     "name": "(S)重生之我是持枪特感",
      "score": 0,
-     "seconds": 832
+     "seconds": 1079
     },
     {
-     "name": "(S)炒酸奶",
+     "name": "(S)Aurph",
      "score": 0,
-     "seconds": 273
+     "seconds": 18
     },
     {
-     "name": "",
+     "name": "重生之我是持枪特感",
      "score": 0,
-     "seconds": 7
+     "seconds": 17
     }
    ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1794822481637,
-   "elapsed_ms": 849
+   "checked_at_ms": 1794822618942,
+   "elapsed_ms": 671
   },
   {
    "name": "2服",
@@ -96,56 +86,61 @@
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 7,
+   "players": 8,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 396,
+   "ping": 313,
    "players_list": [
     {
      "name": "七二一",
-     "score": 3,
-     "seconds": 2758
+     "score": 1,
+     "seconds": 2895
     },
     {
      "name": "WWWWWWWW",
-     "score": 4,
-     "seconds": 2598
+     "score": 0,
+     "seconds": 2735
     },
     {
      "name": "乳汁",
-     "score": 4,
-     "seconds": 1708
+     "score": 0,
+     "seconds": 1845
     },
     {
      "name": "战役高手",
-     "score": 20,
-     "seconds": 1255
+     "score": 2,
+     "seconds": 1393
     },
     {
      "name": "Skyrim999",
-     "score": 6,
-     "seconds": 499
+     "score": 0,
+     "seconds": 636
     },
     {
      "name": "故事丶细腻",
-     "score": 2,
-     "seconds": 285
+     "score": 0,
+     "seconds": 422
     },
     {
      "name": "MC 元首",
-     "score": 5,
-     "seconds": 250
+     "score": 0,
+     "seconds": 387
+    },
+    {
+     "name": "轻如晚雾万山遥",
+     "score": 2,
+     "seconds": 83
     }
    ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.62.95",
-   "checked_at_ms": 1794822482433,
-   "elapsed_ms": 796
+   "checked_at_ms": 1794822619566,
+   "elapsed_ms": 623
   },
   {
    "name": "3服",
@@ -162,13 +157,13 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 433,
+   "ping": 397,
    "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1794822483741,
-   "elapsed_ms": 1307
+   "checked_at_ms": 1794822620603,
+   "elapsed_ms": 1037
   },
   {
    "name": "4服",
@@ -184,8 +179,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822487946,
-   "elapsed_ms": 4205
+   "checked_at_ms": 1794822624808,
+   "elapsed_ms": 4204
   },
   {
    "name": "5服",
@@ -201,8 +196,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822492152,
-   "elapsed_ms": 4205
+   "checked_at_ms": 1794822629012,
+   "elapsed_ms": 4204
   },
   {
    "name": "高抗",
@@ -218,8 +213,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822496356,
-   "elapsed_ms": 4204
+   "checked_at_ms": 1794822633218,
+   "elapsed_ms": 4205
   },
   {
    "name": "高抗2",
@@ -235,7 +230,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822500560,
+   "checked_at_ms": 1794822637422,
    "elapsed_ms": 4204
   }
  ]
