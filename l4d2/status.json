@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-16T09:50:37Z",
- "generated_at_ms": 1794822637422,
+ "generated_at": "2026-11-16T19:51:28Z",
+ "generated_at_ms": 1794858688472,
  "refresh_minutes": 10,
- "runner": "43843324569",
+ "runner": "43943621427",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,139 +13,35 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c1m3_mall",
+   "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 9,
+   "players": 1,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 329,
+   "ping": 398,
    "players_list": [
     {
-     "name": "𝗘𝘀𝘁𝗵𝗲𝗿",
+     "name": "刹那",
      "score": 0,
-     "seconds": 5990
-    },
-    {
-     "name": "=v=",
-     "score": 0,
-     "seconds": 5537
-    },
-    {
-     "name": "大黄",
-     "score": 0,
-     "seconds": 2002
-    },
-    {
-     "name": "绝恋世家",
-     "score": 0,
-     "seconds": 1327
-    },
-    {
-     "name": "覆膜",
-     "score": 0,
-     "seconds": 1119
-    },
-    {
-     "name": "Retr0",
-     "score": 0,
-     "seconds": 1115
-    },
-    {
-     "name": "我独自升级vol.7",
-     "score": 0,
-     "seconds": 1079
-    },
-    {
-     "name": "(S)Aurph",
-     "score": 0,
-     "seconds": 18
-    },
-    {
-     "name": "重生之我是持枪特感",
-     "score": 0,
-     "seconds": 17
+     "seconds": 14
     }
    ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1794822618942,
-   "elapsed_ms": 671
+   "checked_at_ms": 1794858669816,
+   "elapsed_ms": 799
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m4_barns",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "players": 8,
-   "max_players": 12,
-   "bots": 0,
-   "vac": true,
-   "version": "2.2.4.3",
-   "passworded": false,
-   "dedicated": true,
-   "ping": 313,
-   "players_list": [
-    {
-     "name": "七二一",
-     "score": 1,
-     "seconds": 2895
-    },
-    {
-     "name": "WWWWWWWW",
-     "score": 0,
-     "seconds": 2735
-    },
-    {
-     "name": "乳汁",
-     "score": 0,
-     "seconds": 1845
-    },
-    {
-     "name": "战役高手",
-     "score": 2,
-     "seconds": 1393
-    },
-    {
-     "name": "Skyrim999",
-     "score": 0,
-     "seconds": 636
-    },
-    {
-     "name": "故事丶细腻",
-     "score": 0,
-     "seconds": 422
-    },
-    {
-     "name": "MC 元首",
-     "score": 0,
-     "seconds": 387
-    },
-    {
-     "name": "轻如晚雾万山遥",
-     "score": 2,
-     "seconds": 83
-    }
-   ],
-   "source": "a2s",
-   "ok": true,
-   "ip": "1.15.62.95",
-   "checked_at_ms": 1794822619566,
-   "elapsed_ms": 623
-  },
-  {
-   "name": "3服",
-   "addr": "nb.xubw.cn:24085",
-   "server_name": "抽象进阶包抗服3服[进阶包抗]",
    "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
@@ -157,13 +53,72 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 397,
+   "ping": 402,
    "players_list": [],
    "source": "a2s",
    "ok": true,
+   "ip": "1.15.62.95",
+   "checked_at_ms": 1794858670618,
+   "elapsed_ms": 801
+  },
+  {
+   "name": "3服",
+   "addr": "nb.xubw.cn:24085",
+   "server_name": "抽象进阶包抗服3服[进阶包抗]",
+   "map": "c4m4_milltown_b",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 7,
+   "max_players": 12,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 437,
+   "players_list": [
+    {
+     "name": "红妖",
+     "score": 0,
+     "seconds": 9077
+    },
+    {
+     "name": "白夜",
+     "score": 9,
+     "seconds": 4190
+    },
+    {
+     "name": "素食女权主义原神高手",
+     "score": 4,
+     "seconds": 3316
+    },
+    {
+     "name": "皓月当空敬逍遥",
+     "score": 1,
+     "seconds": 2481
+    },
+    {
+     "name": "shxh",
+     "score": 1,
+     "seconds": 2433
+    },
+    {
+     "name": "文班冠马",
+     "score": 6,
+     "seconds": 600
+    },
+    {
+     "name": "我他妈不能这么帅",
+     "score": 0,
+     "seconds": 100
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1794822620603,
-   "elapsed_ms": 1037
+   "checked_at_ms": 1794858671654,
+   "elapsed_ms": 1036
   },
   {
    "name": "4服",
@@ -179,7 +134,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822624808,
+   "checked_at_ms": 1794858675858,
    "elapsed_ms": 4204
   },
   {
@@ -196,7 +151,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822629012,
+   "checked_at_ms": 1794858680063,
    "elapsed_ms": 4204
   },
   {
@@ -213,8 +168,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822633218,
-   "elapsed_ms": 4205
+   "checked_at_ms": 1794858684267,
+   "elapsed_ms": 4204
   },
   {
    "name": "高抗2",
@@ -230,7 +185,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794822637422,
+   "checked_at_ms": 1794858688471,
    "elapsed_ms": 4204
   }
  ]
