@@ -130,12 +130,12 @@
   .meter-top .p{font-size:24px;font-weight:700;line-height:1;letter-spacing:-.5px}
   .meter-top .s{font-size:13px;color:var(--dim2)}
   .meter-top .cap{margin-left:auto;font-size:11px;color:var(--dim2);letter-spacing:.4px}
-  .bar{height:6px;border-radius:99px;background:#1b2530;overflow:hidden}
-  .bar > span{display:block;height:100%;border-radius:99px;width:0;
+  .meter-bar{height:6px;border-radius:99px;background:#1b2530;overflow:hidden}
+  .meter-bar > span{display:block;height:100%;border-radius:99px;width:0;
     background:linear-gradient(90deg,#2ecc8f,#42d9a4);
     transition:width .55s cubic-bezier(.22,1,.36,1),background .3s}
-  .card[data-load="full"] .bar > span{background:linear-gradient(90deg,#f0a92c,#ef4b52)}
-  .card[data-load="high"] .bar > span{background:linear-gradient(90deg,#2ecc8f,#f0a92c)}
+  .card[data-load="full"] .meter-bar > span{background:linear-gradient(90deg,#f0a92c,#ef4b52)}
+  .card[data-load="high"] .meter-bar > span{background:linear-gradient(90deg,#2ecc8f,#f0a92c)}
 
   .meta{display:grid;grid-template-columns:1fr auto;gap:8px 12px;font-size:12px;margin-bottom:12px}
   .meta > div{display:flex;gap:7px;align-items:center;min-width:0}
@@ -539,13 +539,16 @@
       .then(function (j) {
         state.fatal = false;
         $("fatal").classList.remove("show");
+        var gen = j.generated_at_ms || (j.generated_at ? Date.parse(j.generated_at) : Date.now());
+        var same = state.rows.length > 0 && state.meta && state.meta.generated === gen;
         state.meta = {
-          generated: j.generated_at_ms || (j.generated_at ? Date.parse(j.generated_at) : Date.now()),
+          generated: gen,
           refresh: j.refresh_minutes || 10,
           sources: j.sources || []
         };
         state.rows = (j.servers || []).map(normalizeStatic);
-        render(true);
+        if (same) updateHead();   // 数据没变，只刷时间，不重建卡片
+        else render(true);
       })
       .catch(function (err) {
         state.fatal = true;
@@ -647,6 +650,11 @@
       grid.appendChild(frag);
     }
 
+    updateHead();
+  }
+
+  /* 只刷新顶部统计和数据条，不动卡片（避免进度条每次轮询都从 0 重长） */
+  function updateHead() {
     var online = 0, players = 0, maxp = 0;
     state.rows.forEach(function (r) {
       if (r.status === "ok") { online++; players += r.players; maxp += r.max; }
@@ -713,7 +721,7 @@
             '<span class="s">/ ' + r.max + "</span>" +
             '<span class="cap">' + (r.bots ? "含 Bot " + r.bots : "玩家") + "</span>" +
           "</div>" +
-          '<div class="bar"><span style="width:' + pct + '%"></span></div>' +
+          '<div class="meter-bar"><span style="width:' + pct + '%"></span></div>' +
         "</div>" +
         '<div class="meta">' +
           '<div><b>地图</b><span title="' + esc(r.map) + '">' + esc(r.map || "–") + "</span></div>" +
@@ -737,7 +745,7 @@
         '<h2 class="srv-name muted">正在查询…</h2>' +
         '<div class="meter">' +
           '<div class="meter-top"><span class="p num" style="color:#3b4d5f">--</span><span class="s">/ --</span></div>' +
-          '<div class="bar"><span style="width:0%"></span></div>' +
+          '<div class="meter-bar"><span style="width:0%"></span></div>' +
         "</div>" +
         '<div class="meta"><div><b>地图</b><span>–</span></div><div><b>延迟</b><span>–</span></div>' +
         '<div><b>&nbsp;</b><span>&nbsp;</span></div><div><b>&nbsp;</b><span>&nbsp;</span></div></div>';
@@ -867,16 +875,25 @@
     toast("已填入站点配置，点保存生效");
   });
 
-  /* 诊断：?dbg=1 */
+  /* 诊断：?dbg=1 右上角显示布局实测值，排查错位用 */
   if (QS.get("dbg")) {
     var dbg = document.createElement("div");
-    dbg.style.cssText = "position:fixed;left:0;top:0;z-index:99999;background:#0f0;color:#000;" +
-      "font:12px Consolas,monospace;padding:3px 7px;white-space:pre";
+    dbg.style.cssText = "position:fixed;right:0;bottom:0;z-index:99999;background:#0f0;color:#000;" +
+      "font:11px Consolas,monospace;padding:4px 8px;white-space:pre;line-height:1.5";
     document.body.appendChild(dbg);
+
     setInterval(function () {
-      dbg.textContent = "mode=" + state.cfg.mode + " rows=" + state.rows.length +
-        " scrollY=" + window.scrollY + " innerH=" + window.innerHeight +
-        " gen=" + (state.meta && state.meta.generated);
+      var hd = document.querySelector("header");
+      var bar = document.querySelector(".bar");
+      var mb = document.querySelector(".meter-bar");
+      var fill = mb ? mb.querySelector("span") : null;
+      var hr = hd.getBoundingClientRect();
+      var br = bar.getBoundingClientRect();
+      dbg.textContent =
+        "scrollY=" + Math.round(window.scrollY) + "  innerH=" + window.innerHeight + "\n" +
+        "header h=" + Math.round(hr.height) + "  bar h=" + Math.round(br.height) + "\n" +
+        "meterBar h=" + (mb ? Math.round(mb.getBoundingClientRect().height) : "-") +
+        "  fill=" + (fill ? Math.round(fill.getBoundingClientRect().width) + "px" : "-");
     }, 500);
   }
 
