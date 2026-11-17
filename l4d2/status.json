@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-16T19:51:28Z",
- "generated_at_ms": 1794858688472,
+ "generated_at": "2026-11-17T02:50:18Z",
+ "generated_at_ms": 1794883818925,
  "refresh_minutes": 10,
- "runner": "43943621427",
+ "runner": "44005803973",
  "online": 3,
  "total": 7,
  "sources": [
@@ -17,26 +17,20 @@
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 1,
+   "players": 0,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 398,
-   "players_list": [
-    {
-     "name": "刹那",
-     "score": 0,
-     "seconds": 14
-    }
-   ],
+   "ping": 360,
+   "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1794858669816,
-   "elapsed_ms": 799
+   "checked_at_ms": 1794883797017,
+   "elapsed_ms": 1742
   },
   {
    "name": "2服",
@@ -53,72 +47,36 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 402,
+   "ping": 396,
    "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.62.95",
-   "checked_at_ms": 1794858670618,
-   "elapsed_ms": 801
+   "checked_at_ms": 1794883798814,
+   "elapsed_ms": 1797
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
    "server_name": "抽象进阶包抗服3服[进阶包抗]",
-   "map": "c4m4_milltown_b",
+   "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 7,
+   "players": 1,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 437,
-   "players_list": [
-    {
-     "name": "红妖",
-     "score": 0,
-     "seconds": 9077
-    },
-    {
-     "name": "白夜",
-     "score": 9,
-     "seconds": 4190
-    },
-    {
-     "name": "素食女权主义原神高手",
-     "score": 4,
-     "seconds": 3316
-    },
-    {
-     "name": "皓月当空敬逍遥",
-     "score": 1,
-     "seconds": 2481
-    },
-    {
-     "name": "shxh",
-     "score": 1,
-     "seconds": 2433
-    },
-    {
-     "name": "文班冠马",
-     "score": 6,
-     "seconds": 600
-    },
-    {
-     "name": "我他妈不能这么帅",
-     "score": 0,
-     "seconds": 100
-    }
-   ],
+   "ping": 345,
+   "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1794858671654,
-   "elapsed_ms": 1036
+   "checked_at_ms": 1794883802109,
+   "elapsed_ms": 3294
   },
   {
    "name": "4服",
@@ -134,8 +92,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794858675858,
-   "elapsed_ms": 4204
+   "checked_at_ms": 1794883806312,
+   "elapsed_ms": 4203
   },
   {
    "name": "5服",
@@ -151,7 +109,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794858680063,
+   "checked_at_ms": 1794883810517,
    "elapsed_ms": 4204
   },
   {
@@ -168,7 +126,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794858684267,
+   "checked_at_ms": 1794883814721,
    "elapsed_ms": 4204
   },
   {
@@ -185,8 +143,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794858688471,
-   "elapsed_ms": 4204
+   "checked_at_ms": 1794883818925,
+   "elapsed_ms": 4203
   }
  ]
 }
