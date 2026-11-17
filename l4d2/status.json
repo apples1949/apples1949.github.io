@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-17T02:50:18Z",
- "generated_at_ms": 1794883818925,
+ "generated_at": "2026-11-17T11:20:05Z",
+ "generated_at_ms": 1794914405382,
  "refresh_minutes": 10,
- "runner": "44005803973",
+ "runner": "44072987165",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,52 +13,95 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c8m4_interior",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 0,
-   "max_players": 12,
+   "players": 13,
+   "max_players": 13,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 360,
-   "players_list": [],
+   "ping": 377,
+   "players_list": [
+    {
+     "name": "(S)白雪落地落雪白",
+     "score": 0,
+     "seconds": 10434
+    },
+    {
+     "name": "lenggg",
+     "score": 0,
+     "seconds": 9083
+    },
+    {
+     "name": "轻如晚雾万山遥",
+     "score": 6,
+     "seconds": 5795
+    },
+    {
+     "name": "绝恋世家",
+     "score": 0,
+     "seconds": 5719
+    },
+    {
+     "name": "闺蜜把麦开开来",
+     "score": -2,
+     "seconds": 5617
+    },
+    {
+     "name": "贝斯",
+     "score": 6,
+     "seconds": 5468
+    },
+    {
+     "name": "白夜",
+     "score": 5,
+     "seconds": 3077
+    },
+    {
+     "name": "𝗘𝘀𝘁𝗵𝗲𝗿",
+     "score": 0,
+     "seconds": 2855
+    },
+    {
+     "name": "(S)delay no more",
+     "score": 0,
+     "seconds": 1561
+    },
+    {
+     "name": "六个字的名字",
+     "score": 4,
+     "seconds": 679
+    },
+    {
+     "name": "(S)满穗",
+     "score": 0,
+     "seconds": 233
+    },
+    {
+     "name": "(S)素食女权主义原神高�",
+     "score": 0,
+     "seconds": 194
+    },
+    {
+     "name": "(S)小野芥子",
+     "score": 0,
+     "seconds": 150
+    }
+   ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1794883797017,
-   "elapsed_ms": 1742
+   "checked_at_ms": 1794914386889,
+   "elapsed_ms": 759
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "players": 0,
-   "max_players": 12,
-   "bots": 0,
-   "vac": true,
-   "version": "2.2.4.3",
-   "passworded": false,
-   "dedicated": true,
-   "ping": 396,
-   "players_list": [],
-   "source": "a2s",
-   "ok": true,
-   "ip": "1.15.62.95",
-   "checked_at_ms": 1794883798814,
-   "elapsed_ms": 1797
-  },
-  {
-   "name": "3服",
-   "addr": "nb.xubw.cn:24085",
-   "server_name": "抽象进阶包抗服3服[进阶包抗]",
    "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
@@ -70,13 +113,98 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 345,
-   "players_list": [],
+   "ping": 339,
+   "players_list": [
+    {
+     "name": "cos60度等于π",
+     "score": 0,
+     "seconds": 30
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
+   "ip": "1.15.62.95",
+   "checked_at_ms": 1794914387568,
+   "elapsed_ms": 679
+  },
+  {
+   "name": "3服",
+   "addr": "nb.xubw.cn:24085",
+   "server_name": "抽象进阶包抗服3服[进阶包抗]",
+   "map": "c2m2_fairgrounds",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 11,
+   "max_players": 12,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 360,
+   "players_list": [
+    {
+     "name": "Habsburg",
+     "score": 1,
+     "seconds": 1253
+    },
+    {
+     "name": "満天星",
+     "score": 2,
+     "seconds": 1114
+    },
+    {
+     "name": "五水",
+     "score": 0,
+     "seconds": 996
+    },
+    {
+     "name": "TRBinF",
+     "score": 1,
+     "seconds": 969
+    },
+    {
+     "name": "yyz",
+     "score": 0,
+     "seconds": 513
+    },
+    {
+     "name": "梦安",
+     "score": 0,
+     "seconds": 485
+    },
+    {
+     "name": "(S)七二一",
+     "score": 0,
+     "seconds": 146
+    },
+    {
+     "name": "(S)喜欢大吧唧",
+     "score": 0,
+     "seconds": 111
+    },
+    {
+     "name": "林烨不是林火华",
+     "score": 0,
+     "seconds": 103
+    },
+    {
+     "name": "(S)=v=",
+     "score": 0,
+     "seconds": 62
+    },
+    {
+     "name": "故事丶细腻",
+     "score": 0,
+     "seconds": 47
+    }
+   ],
    "source": "a2s",
    "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1794883802109,
-   "elapsed_ms": 3294
+   "checked_at_ms": 1794914388566,
+   "elapsed_ms": 997
   },
   {
    "name": "4服",
@@ -92,7 +220,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794883806312,
+   "checked_at_ms": 1794914392769,
    "elapsed_ms": 4203
   },
   {
@@ -109,7 +237,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794883810517,
+   "checked_at_ms": 1794914396974,
    "elapsed_ms": 4204
   },
   {
@@ -126,7 +254,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794883814721,
+   "checked_at_ms": 1794914401178,
    "elapsed_ms": 4204
   },
   {
@@ -143,7 +271,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794883818925,
+   "checked_at_ms": 1794914405382,
    "elapsed_ms": 4203
   }
  ]
