@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-18T10:25:11Z",
- "generated_at_ms": 1794997511890,
+ "generated_at": "2026-11-18T18:58:57Z",
+ "generated_at_ms": 1795028337590,
  "refresh_minutes": 10,
- "runner": "44285147508",
+ "runner": "44375482590",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,55 +13,30 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c1m1_hotel",
+   "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 6,
+   "players": 1,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 432,
+   "ping": 382,
    "players_list": [
     {
-     "name": "FeryT1y'",
-     "score": 8,
-     "seconds": 1097
-    },
-    {
-     "name": "贝斯",
-     "score": 8,
-     "seconds": 1053
-    },
-    {
-     "name": "=v=",
+     "name": "",
      "score": 0,
-     "seconds": 967
-    },
-    {
-     "name": "榮記冰室",
-     "score": 5,
-     "seconds": 885
-    },
-    {
-     "name": "𝗘𝘀𝘁𝗵𝗲𝗿",
-     "score": 0,
-     "seconds": 85
-    },
-    {
-     "name": "60万国军教头蒋介石",
-     "score": 0,
-     "seconds": 34
+     "seconds": 11
     }
    ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1794997489944,
-   "elapsed_ms": 2374
+   "checked_at_ms": 1795028318961,
+   "elapsed_ms": 763
   },
   {
    "name": "2服",
@@ -78,87 +53,36 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 436,
+   "ping": 381,
    "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.62.95",
-   "checked_at_ms": 1794997494049,
-   "elapsed_ms": 4105
+   "checked_at_ms": 1795028319723,
+   "elapsed_ms": 762
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
    "server_name": "抽象进阶包抗服3服[进阶包抗]",
-   "map": "c2m2_fairgrounds",
+   "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 10,
-   "max_players": 14,
+   "players": 0,
+   "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 435,
-   "players_list": [
-    {
-     "name": "亦",
-     "score": 4,
-     "seconds": 6819
-    },
-    {
-     "name": "(S)yyz",
-     "score": 3,
-     "seconds": 4971
-    },
-    {
-     "name": "直升机肘机牢大",
-     "score": 6,
-     "seconds": 4745
-    },
-    {
-     "name": "Retr0",
-     "score": 7,
-     "seconds": 4198
-    },
-    {
-     "name": "(S)牢大肘击直升机",
-     "score": 2,
-     "seconds": 3763
-    },
-    {
-     "name": "lenggg",
-     "score": 6,
-     "seconds": 1380
-    },
-    {
-     "name": "被我扑倒有色图哦",
-     "score": 15,
-     "seconds": 785
-    },
-    {
-     "name": "ᗜᴗᗜ",
-     "score": 8,
-     "seconds": 781
-    },
-    {
-     "name": "cos60度等于π",
-     "score": 0,
-     "seconds": 610
-    },
-    {
-     "name": "(S)炼狱揉奶师",
-     "score": 0,
-     "seconds": 529
-    }
-   ],
+   "ping": 383,
+   "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1794997495073,
-   "elapsed_ms": 1024
+   "checked_at_ms": 1795028320774,
+   "elapsed_ms": 1050
   },
   {
    "name": "4服",
@@ -174,8 +98,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794997499277,
-   "elapsed_ms": 4203
+   "checked_at_ms": 1795028324978,
+   "elapsed_ms": 4204
   },
   {
    "name": "5服",
@@ -191,7 +115,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794997503482,
+   "checked_at_ms": 1795028329183,
    "elapsed_ms": 4204
   },
   {
@@ -208,8 +132,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794997507686,
-   "elapsed_ms": 4204
+   "checked_at_ms": 1795028333386,
+   "elapsed_ms": 4203
   },
   {
    "name": "高抗2",
@@ -225,8 +149,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794997511890,
-   "elapsed_ms": 4204
+   "checked_at_ms": 1795028337590,
+   "elapsed_ms": 4203
   }
  ]
 }
