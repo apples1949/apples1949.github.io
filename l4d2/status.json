@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-17T19:57:01Z",
- "generated_at_ms": 1794945421809,
+ "generated_at": "2026-11-18T02:19:28Z",
+ "generated_at_ms": 1794968368605,
  "refresh_minutes": 10,
- "runner": "44163966652",
- "online": 2,
+ "runner": "44222344558",
+ "online": 3,
  "total": 7,
  "sources": [
   "a2s"
@@ -13,52 +13,60 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c2m2_fairgrounds",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 1,
+   "players": 6,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 424,
+   "ping": 467,
    "players_list": [
     {
-     "name": "暖服机器人",
+     "name": "camebuy",
+     "score": 3,
+     "seconds": 1333
+    },
+    {
+     "name": "小鸟游六花",
+     "score": 8,
+     "seconds": 1295
+    },
+    {
+     "name": "Blue",
+     "score": -1,
+     "seconds": 1201
+    },
+    {
+     "name": "我也想当猪肉佬",
+     "score": 2,
+     "seconds": 1201
+    },
+    {
+     "name": "呕血",
      "score": 0,
-     "seconds": 673
+     "seconds": 865
+    },
+    {
+     "name": "XXD(?!蝶蝶!?)",
+     "score": 8,
+     "seconds": 327
     }
    ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1794945399660,
-   "elapsed_ms": 846
+   "checked_at_ms": 1794968347892,
+   "elapsed_ms": 928
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
-   "ok": false,
-   "source": "none",
-   "error": "timed out",
-   "server_name": "",
-   "map": "",
-   "players": 0,
-   "max_players": 0,
-   "bots": 0,
-   "players_list": [],
-   "vac": false,
-   "version": "",
-   "checked_at_ms": 1794945403864,
-   "elapsed_ms": 4204
-  },
-  {
-   "name": "3服",
-   "addr": "nb.xubw.cn:24085",
-   "server_name": "抽象进阶包抗服3服[进阶包抗]",
+   "server_name": "抽象进阶包抗服2服[进阶包抗]",
    "map": "c2m1_highway",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
@@ -70,13 +78,67 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 436,
+   "ping": 474,
    "players_list": [],
    "source": "a2s",
    "ok": true,
+   "ip": "1.15.62.95",
+   "checked_at_ms": 1794968348846,
+   "elapsed_ms": 953
+  },
+  {
+   "name": "3服",
+   "addr": "nb.xubw.cn:24085",
+   "server_name": "抽象进阶包抗服3服[进阶包抗]",
+   "map": "c2m2_fairgrounds",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "players": 6,
+   "max_players": 12,
+   "bots": 0,
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 518,
+   "players_list": [
+    {
+     "name": "Noda",
+     "score": 0,
+     "seconds": 844
+    },
+    {
+     "name": "19127335585",
+     "score": 0,
+     "seconds": 814
+    },
+    {
+     "name": "yinshaofeng_1892",
+     "score": 0,
+     "seconds": 760
+    },
+    {
+     "name": "摆渡人",
+     "score": 0,
+     "seconds": 543
+    },
+    {
+     "name": "花",
+     "score": 0,
+     "seconds": 463
+    },
+    {
+     "name": "甜尤",
+     "score": 0,
+     "seconds": 278
+    }
+   ],
+   "source": "a2s",
+   "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1794945404989,
-   "elapsed_ms": 1124
+   "checked_at_ms": 1794968351788,
+   "elapsed_ms": 2942
   },
   {
    "name": "4服",
@@ -92,8 +154,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794945409194,
-   "elapsed_ms": 4205
+   "checked_at_ms": 1794968355993,
+   "elapsed_ms": 4204
   },
   {
    "name": "5服",
@@ -109,7 +171,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794945413399,
+   "checked_at_ms": 1794968360197,
    "elapsed_ms": 4204
   },
   {
@@ -126,7 +188,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794945417604,
+   "checked_at_ms": 1794968364401,
    "elapsed_ms": 4204
   },
   {
@@ -143,8 +205,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1794945421809,
-   "elapsed_ms": 4205
+   "checked_at_ms": 1794968368605,
+   "elapsed_ms": 4203
   }
  ]
 }
