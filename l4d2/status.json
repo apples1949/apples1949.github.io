@@ -1,176 +1,73 @@
 {
- "generated_at": "2026-11-19T06:39:50Z",
- "generated_at_ms": 1795070390311,
+ "generated_at": "2026-11-19T06:48:07Z",
+ "generated_at_ms": 1795070887839,
  "refresh_minutes": 10,
- "runner": "44473737810",
+ "runner": "44474708353",
  "online": 3,
  "total": 7,
  "sources": [
-  "a2s"
+  "rcon"
  ],
  "servers": [
   {
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c5m1_waterfront",
+   "map": "c5m2_park",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "ok": true,
+   "source": "rcon",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 9,
-   "max_players": 12,
-   "bots": 0,
-   "vac": true,
-   "version": "2.2.4.3",
    "passworded": false,
-   "dedicated": true,
-   "ping": 488,
-   "players_list": [
-    {
-     "name": "轻绘梨花泪沾衣",
-     "score": -1,
-     "seconds": 5700
-    },
-    {
-     "name": "sukura",
-     "score": 0,
-     "seconds": 5496
-    },
-    {
-     "name": "ysy",
-     "score": 2,
-     "seconds": 4601
-    },
-    {
-     "name": "EzK",
-     "score": 1,
-     "seconds": 3925
-    },
-    {
-     "name": "洛洛洛喵",
-     "score": 2,
-     "seconds": 3705
-    },
-    {
-     "name": "你和他废什么话",
-     "score": 13,
-     "seconds": 2877
-    },
-    {
-     "name": "侯晓之",
-     "score": 0,
-     "seconds": 544
-    },
-    {
-     "name": "Turner",
-     "score": 3,
-     "seconds": 294
-    },
-    {
-     "name": "奶豆",
-     "score": 0,
-     "seconds": 14
-    }
-   ],
-   "source": "a2s",
-   "ok": true,
-   "checked_at_ms": 1795070362934,
-   "elapsed_ms": 969
+   "ping": null,
+   "vac": null,
+   "players_list": [],
+   "bots": 0,
+   "max_players": 0,
+   "checked_at_ms": 1795070834639,
+   "elapsed_ms": 3083
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c8m3_sewers",
+   "map": "c8m4_interior",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "ok": true,
+   "source": "rcon",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 10,
-   "max_players": 12,
-   "bots": 0,
-   "vac": true,
-   "version": "2.2.4.3",
    "passworded": false,
-   "dedicated": true,
-   "ping": 489,
-   "players_list": [
-    {
-     "name": "aerbot",
-     "score": 1,
-     "seconds": 6446
-    },
-    {
-     "name": "Robin",
-     "score": 6,
-     "seconds": 1903
-    },
-    {
-     "name": "JoJo我不当人啦！！！",
-     "score": 4,
-     "seconds": 1860
-    },
-    {
-     "name": "神奇走为王",
-     "score": 3,
-     "seconds": 1688
-    },
-    {
-     "name": "TIzds",
-     "score": 0,
-     "seconds": 1685
-    },
-    {
-     "name": "sifenke",
-     "score": 9,
-     "seconds": 1660
-    },
-    {
-     "name": "ᗜᴗᗜ",
-     "score": 8,
-     "seconds": 1086
-    },
-    {
-     "name": "(S)良記冰室",
-     "score": 0,
-     "seconds": 774
-    },
-    {
-     "name": "榮記冰室",
-     "score": 0,
-     "seconds": 215
-    },
-    {
-     "name": "顾淮南",
-     "score": 0,
-     "seconds": 48
-    }
-   ],
-   "source": "a2s",
-   "ok": true,
-   "checked_at_ms": 1795070363902,
-   "elapsed_ms": 967
+   "ping": null,
+   "vac": null,
+   "players_list": [],
+   "bots": 0,
+   "max_players": 0,
+   "checked_at_ms": 1795070837379,
+   "elapsed_ms": 2739
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
    "server_name": "抽象进阶包抗服3服[进阶包抗]",
    "map": "c2m1_highway",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "ok": true,
+   "source": "rcon",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 0,
-   "max_players": 12,
-   "bots": 0,
-   "vac": true,
-   "version": "2.2.4.3",
    "passworded": false,
-   "dedicated": true,
-   "ping": 496,
+   "ping": null,
+   "vac": null,
    "players_list": [],
-   "source": "a2s",
-   "ok": true,
-   "checked_at_ms": 1795070365485,
-   "elapsed_ms": 1583
+   "bots": 0,
+   "max_players": 0,
+   "checked_at_ms": 1795070838988,
+   "elapsed_ms": 1609
   },
   {
    "name": "4服",
@@ -178,7 +75,7 @@
    "tcp_open": false,
    "ok": false,
    "source": "none",
-   "error": "A2S: timed out",
+   "error": "RCON: timed out / A2S: timed out",
    "error_type": "timeout",
    "server_name": "",
    "map": "",
@@ -188,8 +85,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795070371691,
-   "elapsed_ms": 6206
+   "checked_at_ms": 1795070851201,
+   "elapsed_ms": 12213
   },
   {
    "name": "5服",
@@ -197,7 +94,7 @@
    "tcp_open": false,
    "ok": false,
    "source": "none",
-   "error": "A2S: timed out",
+   "error": "RCON: timed out / A2S: timed out",
    "error_type": "timeout",
    "server_name": "",
    "map": "",
@@ -207,8 +104,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795070377898,
-   "elapsed_ms": 6206
+   "checked_at_ms": 1795070863413,
+   "elapsed_ms": 12211
   },
   {
    "name": "高抗",
@@ -216,7 +113,7 @@
    "tcp_open": false,
    "ok": false,
    "source": "none",
-   "error": "A2S: timed out",
+   "error": "RCON: timed out / A2S: timed out",
    "error_type": "timeout",
    "server_name": "",
    "map": "",
@@ -226,8 +123,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795070384105,
-   "elapsed_ms": 6206
+   "checked_at_ms": 1795070875626,
+   "elapsed_ms": 12213
   },
   {
    "name": "高抗2",
@@ -235,7 +132,7 @@
    "tcp_open": false,
    "ok": false,
    "source": "none",
-   "error": "A2S: timed out",
+   "error": "RCON: timed out / A2S: timed out",
    "error_type": "timeout",
    "server_name": "",
    "map": "",
@@ -245,8 +142,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795070390311,
-   "elapsed_ms": 6206
+   "checked_at_ms": 1795070887839,
+   "elapsed_ms": 12212
   }
  ]
 }
