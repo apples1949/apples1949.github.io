@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-19T08:44:56Z",
- "generated_at_ms": 1795077896901,
+ "generated_at": "2026-11-19T17:45:29Z",
+ "generated_at_ms": 1795110329343,
  "refresh_minutes": 10,
- "runner": "44490098537",
+ "runner": "44580418147",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,7 +13,7 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c1m2_streets",
+   "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -26,14 +26,14 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795077845691,
-   "elapsed_ms": 1362
+   "checked_at_ms": 1795110277743,
+   "elapsed_ms": 757
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c1m3_mall",
+   "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -46,8 +46,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795077846453,
-   "elapsed_ms": 762
+   "checked_at_ms": 1795110279573,
+   "elapsed_ms": 1829
   },
   {
    "name": "3服",
@@ -66,8 +66,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795077848050,
-   "elapsed_ms": 1597
+   "checked_at_ms": 1795110280494,
+   "elapsed_ms": 921
   },
   {
    "name": "4服",
@@ -85,7 +85,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795077860263,
+   "checked_at_ms": 1795110292706,
    "elapsed_ms": 12212
   },
   {
@@ -104,7 +104,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795077872476,
+   "checked_at_ms": 1795110304919,
    "elapsed_ms": 12212
   },
   {
@@ -123,7 +123,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795077884688,
+   "checked_at_ms": 1795110317131,
    "elapsed_ms": 12212
   },
   {
@@ -142,8 +142,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795077896901,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795110329343,
+   "elapsed_ms": 12211
   }
  ]
 }
