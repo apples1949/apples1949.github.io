@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-18T18:58:57Z",
- "generated_at_ms": 1795028337590,
+ "generated_at": "2026-11-19T01:05:10Z",
+ "generated_at_ms": 1795050310233,
  "refresh_minutes": 10,
- "runner": "44375482590",
+ "runner": "44434104920",
  "online": 3,
  "total": 7,
  "sources": [
@@ -24,19 +24,19 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 382,
+   "ping": 436,
    "players_list": [
     {
-     "name": "",
+     "name": "暖服机器人",
      "score": 0,
-     "seconds": 11
+     "seconds": 923
     }
    ],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.122.209",
-   "checked_at_ms": 1795028318961,
-   "elapsed_ms": 763
+   "checked_at_ms": 1795050291449,
+   "elapsed_ms": 2369
   },
   {
    "name": "2服",
@@ -53,13 +53,13 @@
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 381,
+   "ping": 441,
    "players_list": [],
    "source": "a2s",
    "ok": true,
    "ip": "1.15.62.95",
-   "checked_at_ms": 1795028319723,
-   "elapsed_ms": 762
+   "checked_at_ms": 1795050292331,
+   "elapsed_ms": 881
   },
   {
    "name": "3服",
@@ -69,20 +69,26 @@
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "players": 0,
+   "players": 1,
    "max_players": 12,
    "bots": 0,
    "vac": true,
    "version": "2.2.4.3",
    "passworded": false,
    "dedicated": true,
-   "ping": 383,
-   "players_list": [],
+   "ping": 472,
+   "players_list": [
+    {
+     "name": "CHEN",
+     "score": 0,
+     "seconds": 34
+    }
+   ],
    "source": "a2s",
    "ok": true,
    "ip": "180.188.24.113",
-   "checked_at_ms": 1795028320774,
-   "elapsed_ms": 1050
+   "checked_at_ms": 1795050293416,
+   "elapsed_ms": 1085
   },
   {
    "name": "4服",
@@ -98,7 +104,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795028324978,
+   "checked_at_ms": 1795050297620,
    "elapsed_ms": 4204
   },
   {
@@ -115,7 +121,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795028329183,
+   "checked_at_ms": 1795050301824,
    "elapsed_ms": 4204
   },
   {
@@ -132,8 +138,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795028333386,
-   "elapsed_ms": 4203
+   "checked_at_ms": 1795050306029,
+   "elapsed_ms": 4204
   },
   {
    "name": "高抗2",
@@ -149,8 +155,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795028337590,
-   "elapsed_ms": 4203
+   "checked_at_ms": 1795050310233,
+   "elapsed_ms": 4204
   }
  ]
 }
