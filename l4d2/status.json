@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-20T06:31:39Z",
- "generated_at_ms": 1795156299884,
+ "generated_at": "2026-11-20T15:46:24Z",
+ "generated_at_ms": 1795189584019,
  "refresh_minutes": 10,
- "runner": "44688311570",
+ "runner": "44766461086",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,46 +13,6 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c8m2_subway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
-   "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795156248759,
-   "elapsed_ms": 1028
-  },
-  {
-   "name": "2服",
-   "addr": "1.15.62.95:27015",
-   "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
-   "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795156249831,
-   "elapsed_ms": 1072
-  },
-  {
-   "name": "3服",
-   "addr": "nb.xubw.cn:24085",
-   "server_name": "抽象进阶包抗服3服[进阶包抗]",
    "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "players": 4,
@@ -62,10 +22,10 @@
      "name": "Coach"
     },
     {
-     "name": "Ellis"
+     "name": "Nick"
     },
     {
-     "name": "Nick"
+     "name": "Ellis"
     },
     {
      "name": "Rochelle"
@@ -80,8 +40,53 @@
    "ping": null,
    "vac": null,
    "bots": 0,
-   "checked_at_ms": 1795156251032,
-   "elapsed_ms": 1200
+   "checked_at_ms": 1795189532196,
+   "elapsed_ms": 1878
+  },
+  {
+   "name": "2服",
+   "addr": "1.15.62.95:27015",
+   "server_name": "抽象进阶包抗服2服[进阶包抗]",
+   "map": "c5m1_waterfront",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "players": 1,
+   "max_players": 0,
+   "players_list": [
+    {
+     "name": "Rochelle"
+    }
+   ],
+   "ok": true,
+   "source": "rcon",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "passworded": false,
+   "ping": null,
+   "vac": null,
+   "bots": 0,
+   "checked_at_ms": 1795189532995,
+   "elapsed_ms": 798
+  },
+  {
+   "name": "3服",
+   "addr": "nb.xubw.cn:24085",
+   "server_name": "抽象进阶包抗服3服[进阶包抗]",
+   "map": "c2m1_highway",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "ok": true,
+   "source": "rcon",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "passworded": false,
+   "ping": null,
+   "vac": null,
+   "players_list": [],
+   "bots": 0,
+   "max_players": 0,
+   "checked_at_ms": 1795189535167,
+   "elapsed_ms": 2172
   },
   {
    "name": "4服",
@@ -99,7 +104,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795156263245,
+   "checked_at_ms": 1795189547380,
    "elapsed_ms": 12212
   },
   {
@@ -118,8 +123,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795156275458,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795189559593,
+   "elapsed_ms": 12213
   },
   {
    "name": "高抗",
@@ -137,8 +142,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795156287671,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795189571806,
+   "elapsed_ms": 12213
   },
   {
    "name": "高抗2",
@@ -156,8 +161,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795156299884,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795189584019,
+   "elapsed_ms": 12213
   }
  ]
 }
