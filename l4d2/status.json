@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-21T18:14:28Z",
- "generated_at_ms": 1795284868499,
+ "generated_at": "2026-11-21T23:29:08Z",
+ "generated_at_ms": 1795303748185,
  "refresh_minutes": 10,
- "runner": "44934335689",
+ "runner": "44961937692",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,7 +13,7 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m5_concert",
+   "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -26,8 +26,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795284816775,
-   "elapsed_ms": 914
+   "checked_at_ms": 1795303696150,
+   "elapsed_ms": 966
   },
   {
    "name": "2服",
@@ -46,8 +46,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795284817774,
-   "elapsed_ms": 999
+   "checked_at_ms": 1795303697733,
+   "elapsed_ms": 1582
   },
   {
    "name": "3服",
@@ -66,8 +66,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795284819648,
-   "elapsed_ms": 1874
+   "checked_at_ms": 1795303699340,
+   "elapsed_ms": 1606
   },
   {
    "name": "4服",
@@ -85,8 +85,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795284831860,
-   "elapsed_ms": 12211
+   "checked_at_ms": 1795303711549,
+   "elapsed_ms": 12208
   },
   {
    "name": "5服",
@@ -104,8 +104,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795284844073,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795303723761,
+   "elapsed_ms": 12212
   },
   {
    "name": "高抗",
@@ -123,8 +123,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795284856286,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795303735973,
+   "elapsed_ms": 12211
   },
   {
    "name": "高抗2",
@@ -142,8 +142,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795284868499,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795303748185,
+   "elapsed_ms": 12212
   }
  ]
 }
