@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-21T23:29:08Z",
- "generated_at_ms": 1795303748185,
+ "generated_at": "2026-11-22T03:26:33Z",
+ "generated_at_ms": 1795317993698,
  "refresh_minutes": 10,
- "runner": "44961937692",
+ "runner": "44980573377",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,8 +13,21 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c4m3_sugarmill_b",
    "version": "2.2.4.3 10097 secure  (unknown)",
+   "players": 3,
+   "max_players": 0,
+   "players_list": [
+    {
+     "name": "Ellis"
+    },
+    {
+     "name": "Rochelle"
+    },
+    {
+     "name": "Coach"
+    }
+   ],
    "ok": true,
    "source": "rcon",
    "folder": "left4dead2",
@@ -23,17 +36,15 @@
    "passworded": false,
    "ping": null,
    "vac": null,
-   "players_list": [],
    "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795303696150,
-   "elapsed_ms": 966
+   "checked_at_ms": 1795317941454,
+   "elapsed_ms": 996
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
-   "server_name": "苹果果的抽象进阶包抗服[进阶包抗]",
-   "map": "c2m1_highway",
+   "server_name": "抽象进阶包抗服2服[进阶包抗]",
+   "map": "c2m2_fairgrounds",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -46,15 +57,22 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795303697733,
-   "elapsed_ms": 1582
+   "checked_at_ms": 1795317943240,
+   "elapsed_ms": 1786
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
    "server_name": "抽象进阶包抗服3服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c2m4_barns",
    "version": "2.2.4.3 10097 secure  (unknown)",
+   "players": 1,
+   "max_players": 0,
+   "players_list": [
+    {
+     "name": "Smoker"
+    }
+   ],
    "ok": true,
    "source": "rcon",
    "folder": "left4dead2",
@@ -63,10 +81,8 @@
    "passworded": false,
    "ping": null,
    "vac": null,
-   "players_list": [],
    "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795303699340,
+   "checked_at_ms": 1795317944847,
    "elapsed_ms": 1606
   },
   {
@@ -85,8 +101,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795303711549,
-   "elapsed_ms": 12208
+   "checked_at_ms": 1795317957060,
+   "elapsed_ms": 12213
   },
   {
    "name": "5服",
@@ -104,7 +120,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795303723761,
+   "checked_at_ms": 1795317969273,
    "elapsed_ms": 12212
   },
   {
@@ -123,8 +139,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795303735973,
-   "elapsed_ms": 12211
+   "checked_at_ms": 1795317981485,
+   "elapsed_ms": 12212
   },
   {
    "name": "高抗2",
@@ -142,7 +158,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795303748185,
+   "checked_at_ms": 1795317993698,
    "elapsed_ms": 12212
   }
  ]
