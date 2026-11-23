@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-22T19:15:41Z",
- "generated_at_ms": 1795374941402,
+ "generated_at": "2026-11-23T00:22:52Z",
+ "generated_at_ms": 1795393372107,
  "refresh_minutes": 10,
- "runner": "45059633943",
+ "runner": "45088339154",
  "online": 3,
  "total": 7,
  "sources": [
@@ -15,6 +15,19 @@
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
    "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
+   "players": 3,
+   "max_players": 0,
+   "players_list": [
+    {
+     "name": "Ellis"
+    },
+    {
+     "name": "Coach"
+    },
+    {
+     "name": "Rochelle"
+    }
+   ],
    "ok": true,
    "source": "rcon",
    "folder": "left4dead2",
@@ -23,11 +36,9 @@
    "passworded": false,
    "ping": null,
    "vac": null,
-   "players_list": [],
    "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795374890763,
-   "elapsed_ms": 679
+   "checked_at_ms": 1795393320751,
+   "elapsed_ms": 899
   },
   {
    "name": "2服",
@@ -46,14 +57,14 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795374891481,
-   "elapsed_ms": 717
+   "checked_at_ms": 1795393321742,
+   "elapsed_ms": 991
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
    "server_name": "抽象进阶包抗服3服[进阶包抗]",
-   "map": "c5m1_waterfront",
+   "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -66,8 +77,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795374892551,
-   "elapsed_ms": 1069
+   "checked_at_ms": 1795393323256,
+   "elapsed_ms": 1513
   },
   {
    "name": "4服",
@@ -85,7 +96,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795374904764,
+   "checked_at_ms": 1795393335469,
    "elapsed_ms": 12213
   },
   {
@@ -104,7 +115,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795374916976,
+   "checked_at_ms": 1795393347681,
    "elapsed_ms": 12211
   },
   {
@@ -123,8 +134,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795374929189,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795393359894,
+   "elapsed_ms": 12213
   },
   {
    "name": "高抗2",
@@ -142,7 +153,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795374941402,
+   "checked_at_ms": 1795393372107,
    "elapsed_ms": 12213
   }
  ]
