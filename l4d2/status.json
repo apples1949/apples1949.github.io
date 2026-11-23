@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-23T00:22:52Z",
- "generated_at_ms": 1795393372107,
+ "generated_at": "2026-11-23T08:02:58Z",
+ "generated_at_ms": 1795420978848,
  "refresh_minutes": 10,
- "runner": "45088339154",
+ "runner": "45135405776",
  "online": 3,
  "total": 7,
  "sources": [
@@ -13,19 +13,33 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c8m2_subway",
    "version": "2.2.4.3 10097 secure  (unknown)",
-   "players": 3,
+   "ok": true,
+   "source": "rcon",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "passworded": false,
+   "ping": null,
+   "vac": null,
+   "players_list": [],
+   "bots": 0,
+   "max_players": 0,
+   "checked_at_ms": 1795420927690,
+   "elapsed_ms": 826
+  },
+  {
+   "name": "2服",
+   "addr": "1.15.62.95:27015",
+   "server_name": "抽象进阶包抗服2服[进阶包抗]",
+   "map": "c2m2_fairgrounds",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "players": 1,
    "max_players": 0,
    "players_list": [
     {
-     "name": "Ellis"
-    },
-    {
-     "name": "Coach"
-    },
-    {
-     "name": "Rochelle"
+     "name": "Nick"
     }
    ],
    "ok": true,
@@ -37,34 +51,14 @@
    "ping": null,
    "vac": null,
    "bots": 0,
-   "checked_at_ms": 1795393320751,
-   "elapsed_ms": 899
-  },
-  {
-   "name": "2服",
-   "addr": "1.15.62.95:27015",
-   "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
-   "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795393321742,
-   "elapsed_ms": 991
+   "checked_at_ms": 1795420928489,
+   "elapsed_ms": 799
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
    "server_name": "抽象进阶包抗服3服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c5m3_cemetery",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -77,8 +71,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795393323256,
-   "elapsed_ms": 1513
+   "checked_at_ms": 1795420930001,
+   "elapsed_ms": 1511
   },
   {
    "name": "4服",
@@ -96,8 +90,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795393335469,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795420942212,
+   "elapsed_ms": 12211
   },
   {
    "name": "5服",
@@ -115,8 +109,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795393347681,
-   "elapsed_ms": 12211
+   "checked_at_ms": 1795420954425,
+   "elapsed_ms": 12212
   },
   {
    "name": "高抗",
@@ -134,8 +128,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795393359894,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795420966635,
+   "elapsed_ms": 12209
   },
   {
    "name": "高抗2",
@@ -153,8 +147,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795393372107,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795420978848,
+   "elapsed_ms": 12212
   }
  ]
 }
