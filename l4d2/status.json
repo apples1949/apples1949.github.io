@@ -1,78 +1,68 @@
 {
- "generated_at": "2026-11-23T08:02:58Z",
- "generated_at_ms": 1795420978848,
+ "generated_at": "2026-11-23T20:09:14Z",
+ "generated_at_ms": 1795464554683,
  "refresh_minutes": 10,
- "runner": "45135405776",
- "online": 3,
+ "runner": "45256116448",
+ "online": 0,
  "total": 7,
- "sources": [
-  "rcon"
- ],
+ "sources": [],
  "servers": [
   {
    "name": "1服",
    "addr": "1.15.122.209:27015",
-   "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c8m2_subway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
-   "bots": 0,
+   "tcp_open": false,
+   "ok": false,
+   "source": "none",
+   "error": "RCON: timed out / A2S: timed out",
+   "error_type": "timeout",
+   "server_name": "",
+   "map": "",
+   "players": 0,
    "max_players": 0,
-   "checked_at_ms": 1795420927690,
-   "elapsed_ms": 826
+   "bots": 0,
+   "players_list": [],
+   "vac": false,
+   "version": "",
+   "checked_at_ms": 1795464488328,
+   "elapsed_ms": 12213
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
-   "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m2_fairgrounds",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "players": 1,
+   "tcp_open": false,
+   "ok": false,
+   "source": "none",
+   "error": "RCON: timed out / A2S: timed out",
+   "error_type": "timeout",
+   "server_name": "",
+   "map": "",
+   "players": 0,
    "max_players": 0,
-   "players_list": [
-    {
-     "name": "Nick"
-    }
-   ],
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
    "bots": 0,
-   "checked_at_ms": 1795420928489,
-   "elapsed_ms": 799
+   "players_list": [],
+   "vac": false,
+   "version": "",
+   "checked_at_ms": 1795464500536,
+   "elapsed_ms": 12207
   },
   {
    "name": "3服",
    "addr": "nb.xubw.cn:24085",
-   "server_name": "抽象进阶包抗服3服[进阶包抗]",
-   "map": "c5m3_cemetery",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
-   "bots": 0,
+   "tcp_open": false,
+   "ok": false,
+   "source": "none",
+   "error": "RCON: [Errno 111] Connection refused / A2S: timed out",
+   "error_type": "timeout",
+   "server_name": "",
+   "map": "",
+   "players": 0,
    "max_players": 0,
-   "checked_at_ms": 1795420930001,
-   "elapsed_ms": 1511
+   "bots": 0,
+   "players_list": [],
+   "vac": false,
+   "version": "",
+   "checked_at_ms": 1795464505836,
+   "elapsed_ms": 5299
   },
   {
    "name": "4服",
@@ -90,8 +80,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795420942212,
-   "elapsed_ms": 12211
+   "checked_at_ms": 1795464518050,
+   "elapsed_ms": 12213
   },
   {
    "name": "5服",
@@ -109,8 +99,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795420954425,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795464530261,
+   "elapsed_ms": 12210
   },
   {
    "name": "高抗",
@@ -128,8 +118,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795420966635,
-   "elapsed_ms": 12209
+   "checked_at_ms": 1795464542474,
+   "elapsed_ms": 12212
   },
   {
    "name": "高抗2",
@@ -147,8 +137,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795420978848,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795464554683,
+   "elapsed_ms": 12209
   }
  ]
 }
