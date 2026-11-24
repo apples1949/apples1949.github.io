@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-24T04:48:48Z",
- "generated_at_ms": 1795495728796,
+ "generated_at": "2026-11-24T15:23:31Z",
+ "generated_at_ms": 1795533811354,
  "refresh_minutes": 10,
- "runner": "45328799003",
+ "runner": "45424683042",
  "online": 0,
  "total": 7,
  "sources": [],
@@ -23,8 +23,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495662911,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795533744136,
+   "elapsed_ms": 12212
   },
   {
    "name": "2服",
@@ -42,8 +42,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495675124,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795533756349,
+   "elapsed_ms": 12212
   },
   {
    "name": "3服",
@@ -61,8 +61,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495679943,
-   "elapsed_ms": 4819
+   "checked_at_ms": 1795533762505,
+   "elapsed_ms": 6155
   },
   {
    "name": "4服",
@@ -80,7 +80,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495692156,
+   "checked_at_ms": 1795533774718,
    "elapsed_ms": 12212
   },
   {
@@ -99,8 +99,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495704369,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795533786928,
+   "elapsed_ms": 12210
   },
   {
    "name": "高抗",
@@ -118,7 +118,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495716583,
+   "checked_at_ms": 1795533799141,
    "elapsed_ms": 12213
   },
   {
@@ -137,7 +137,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795495728796,
+   "checked_at_ms": 1795533811354,
    "elapsed_ms": 12213
   }
  ]
