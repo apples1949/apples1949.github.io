@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-25T08:24:03Z",
- "generated_at_ms": 1795595043287,
+ "generated_at": "2026-11-25T18:47:44Z",
+ "generated_at_ms": 1795632464699,
  "refresh_minutes": 10,
- "runner": "45575784093",
+ "runner": "45678590652",
  "online": 2,
  "total": 7,
  "sources": [
@@ -13,6 +13,26 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
+   "map": "c2m4_barns",
+   "version": "2.2.4.3 10097 secure  (unknown)",
+   "ok": true,
+   "source": "rcon",
+   "folder": "left4dead2",
+   "game": "Left 4 Dead 2",
+   "appid": 550,
+   "passworded": false,
+   "ping": null,
+   "vac": null,
+   "players_list": [],
+   "bots": 0,
+   "max_players": 0,
+   "checked_at_ms": 1795632409931,
+   "elapsed_ms": 998
+  },
+  {
+   "name": "2服",
+   "addr": "1.15.62.95:27015",
+   "server_name": "抽象进阶包抗服2服[进阶包抗]",
    "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
@@ -26,36 +46,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795594988406,
-   "elapsed_ms": 960
-  },
-  {
-   "name": "2服",
-   "addr": "1.15.62.95:27015",
-   "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "players": 2,
-   "max_players": 0,
-   "players_list": [
-    {
-     "name": "Nick"
-    },
-    {
-     "name": "Rochelle"
-    }
-   ],
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "bots": 0,
-   "checked_at_ms": 1795594989353,
-   "elapsed_ms": 946
+   "checked_at_ms": 1795632410977,
+   "elapsed_ms": 1045
   },
   {
    "name": "3服",
@@ -73,8 +65,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795594994435,
-   "elapsed_ms": 5081
+   "checked_at_ms": 1795632415847,
+   "elapsed_ms": 4870
   },
   {
    "name": "4服",
@@ -92,8 +84,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795595006648,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795632428060,
+   "elapsed_ms": 12212
   },
   {
    "name": "5服",
@@ -111,8 +103,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795595018861,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795632440272,
+   "elapsed_ms": 12212
   },
   {
    "name": "高抗",
@@ -130,8 +122,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795595031074,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795632452485,
+   "elapsed_ms": 12213
   },
   {
    "name": "高抗2",
@@ -149,7 +141,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795595043287,
+   "checked_at_ms": 1795632464698,
    "elapsed_ms": 12213
   }
  ]
