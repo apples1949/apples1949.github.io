@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-25T00:02:52Z",
- "generated_at_ms": 1795564972260,
+ "generated_at": "2026-11-25T08:24:03Z",
+ "generated_at_ms": 1795595043287,
  "refresh_minutes": 10,
- "runner": "45514799631",
+ "runner": "45575784093",
  "online": 2,
  "total": 7,
  "sources": [
@@ -12,7 +12,7 @@
   {
    "name": "1服",
    "addr": "1.15.122.209:27015",
-   "server_name": "苹果果的抽象进阶包抗服[进阶包抗]",
+   "server_name": "抽象进阶包抗服1服[进阶包抗]",
    "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
@@ -26,8 +26,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795564917951,
-   "elapsed_ms": 704
+   "checked_at_ms": 1795594988406,
+   "elapsed_ms": 960
   },
   {
    "name": "2服",
@@ -35,6 +35,16 @@
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
    "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
+   "players": 2,
+   "max_players": 0,
+   "players_list": [
+    {
+     "name": "Nick"
+    },
+    {
+     "name": "Rochelle"
+    }
+   ],
    "ok": true,
    "source": "rcon",
    "folder": "left4dead2",
@@ -43,11 +53,9 @@
    "passworded": false,
    "ping": null,
    "vac": null,
-   "players_list": [],
    "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795564918595,
-   "elapsed_ms": 644
+   "checked_at_ms": 1795594989353,
+   "elapsed_ms": 946
   },
   {
    "name": "3服",
@@ -65,8 +73,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795564923408,
-   "elapsed_ms": 4813
+   "checked_at_ms": 1795594994435,
+   "elapsed_ms": 5081
   },
   {
    "name": "4服",
@@ -84,7 +92,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795564935621,
+   "checked_at_ms": 1795595006648,
    "elapsed_ms": 12213
   },
   {
@@ -103,7 +111,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795564947835,
+   "checked_at_ms": 1795595018861,
    "elapsed_ms": 12213
   },
   {
@@ -122,7 +130,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795564960047,
+   "checked_at_ms": 1795595031074,
    "elapsed_ms": 12212
   },
   {
@@ -141,7 +149,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795564972260,
+   "checked_at_ms": 1795595043287,
    "elapsed_ms": 12213
   }
  ]
