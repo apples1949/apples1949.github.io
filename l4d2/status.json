@@ -1,53 +1,54 @@
 {
- "generated_at": "2026-11-26T01:59:27Z",
- "generated_at_ms": 1795658367390,
+ "generated_at": "2026-11-26T10:45:05Z",
+ "generated_at_ms": 1795689905136,
  "refresh_minutes": 10,
- "runner": "45739278388",
- "online": 2,
+ "runner": "45804031270",
+ "online": 1,
  "total": 7,
  "sources": [
-  "rcon"
+  "a2s"
  ],
  "servers": [
   {
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m1_highway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
+   "map": "c1m2_streets",
    "folder": "left4dead2",
    "game": "Left 4 Dead 2",
    "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
+   "players": 8,
+   "max_players": 12,
    "bots": 0,
-   "max_players": 0,
-   "checked_at_ms": 1795658312779,
-   "elapsed_ms": 806
+   "vac": true,
+   "version": "2.2.4.3",
+   "passworded": false,
+   "dedicated": true,
+   "ping": 485,
+   "players_list": [],
+   "source": "a2s",
+   "ok": true,
+   "checked_at_ms": 1795689845139,
+   "elapsed_ms": 7963
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
-   "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
-   "version": "2.2.4.3 10097 secure  (unknown)",
-   "ok": true,
-   "source": "rcon",
-   "folder": "left4dead2",
-   "game": "Left 4 Dead 2",
-   "appid": 550,
-   "passworded": false,
-   "ping": null,
-   "vac": null,
-   "players_list": [],
-   "bots": 0,
+   "tcp_open": false,
+   "ok": false,
+   "source": "none",
+   "error": "RCON: [Errno 111] Connection refused / A2S: timed out",
+   "error_type": "timeout",
+   "server_name": "",
+   "map": "",
+   "players": 0,
    "max_players": 0,
-   "checked_at_ms": 1795658313554,
-   "elapsed_ms": 775
+   "bots": 0,
+   "players_list": [],
+   "vac": false,
+   "version": "",
+   "checked_at_ms": 1795689850860,
+   "elapsed_ms": 5721
   },
   {
    "name": "3服",
@@ -65,8 +66,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795658318538,
-   "elapsed_ms": 4983
+   "checked_at_ms": 1795689856285,
+   "elapsed_ms": 5424
   },
   {
    "name": "4服",
@@ -84,7 +85,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795658330751,
+   "checked_at_ms": 1795689868497,
    "elapsed_ms": 12212
   },
   {
@@ -103,7 +104,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795658342964,
+   "checked_at_ms": 1795689880710,
    "elapsed_ms": 12212
   },
   {
@@ -122,7 +123,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795658355177,
+   "checked_at_ms": 1795689892923,
    "elapsed_ms": 12213
   },
   {
@@ -141,8 +142,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795658367389,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795689905136,
+   "elapsed_ms": 12213
   }
  ]
 }
