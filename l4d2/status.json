@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-25T18:47:44Z",
- "generated_at_ms": 1795632464699,
+ "generated_at": "2026-11-26T01:59:27Z",
+ "generated_at_ms": 1795658367390,
  "refresh_minutes": 10,
- "runner": "45678590652",
+ "runner": "45739278388",
  "online": 2,
  "total": 7,
  "sources": [
@@ -13,7 +13,7 @@
    "name": "1服",
    "addr": "1.15.122.209:27015",
    "server_name": "抽象进阶包抗服1服[进阶包抗]",
-   "map": "c2m4_barns",
+   "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -26,8 +26,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795632409931,
-   "elapsed_ms": 998
+   "checked_at_ms": 1795658312779,
+   "elapsed_ms": 806
   },
   {
    "name": "2服",
@@ -46,8 +46,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795632410977,
-   "elapsed_ms": 1045
+   "checked_at_ms": 1795658313554,
+   "elapsed_ms": 775
   },
   {
    "name": "3服",
@@ -65,8 +65,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795632415847,
-   "elapsed_ms": 4870
+   "checked_at_ms": 1795658318538,
+   "elapsed_ms": 4983
   },
   {
    "name": "4服",
@@ -84,7 +84,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795632428060,
+   "checked_at_ms": 1795658330751,
    "elapsed_ms": 12212
   },
   {
@@ -103,7 +103,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795632440272,
+   "checked_at_ms": 1795658342964,
    "elapsed_ms": 12212
   },
   {
@@ -122,7 +122,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795632452485,
+   "checked_at_ms": 1795658355177,
    "elapsed_ms": 12213
   },
   {
@@ -141,8 +141,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795632464698,
-   "elapsed_ms": 12213
+   "checked_at_ms": 1795658367389,
+   "elapsed_ms": 12212
   }
  ]
 }
