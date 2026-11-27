@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-27T02:43:27Z",
- "generated_at_ms": 1795747407573,
+ "generated_at": "2026-11-27T11:28:55Z",
+ "generated_at_ms": 1795778935911,
  "refresh_minutes": 10,
- "runner": "45929907142",
+ "runner": "45990687113",
  "online": 2,
  "total": 7,
  "sources": [
@@ -26,14 +26,14 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795747352405,
-   "elapsed_ms": 1081
+   "checked_at_ms": 1795778881314,
+   "elapsed_ms": 1094
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c2m3_coaster",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -46,8 +46,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795747353434,
-   "elapsed_ms": 1029
+   "checked_at_ms": 1795778882278,
+   "elapsed_ms": 964
   },
   {
    "name": "3服",
@@ -65,8 +65,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795747358722,
-   "elapsed_ms": 5288
+   "checked_at_ms": 1795778887061,
+   "elapsed_ms": 4782
   },
   {
    "name": "4服",
@@ -84,8 +84,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795747370935,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795778899272,
+   "elapsed_ms": 12211
   },
   {
    "name": "5服",
@@ -103,7 +103,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795747383147,
+   "checked_at_ms": 1795778911485,
    "elapsed_ms": 12212
   },
   {
@@ -122,7 +122,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795747395360,
+   "checked_at_ms": 1795778923698,
    "elapsed_ms": 12212
   },
   {
@@ -141,8 +141,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795747407573,
-   "elapsed_ms": 12212
+   "checked_at_ms": 1795778935911,
+   "elapsed_ms": 12213
   }
  ]
 }
