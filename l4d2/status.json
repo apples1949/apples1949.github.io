@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-27T20:16:02Z",
- "generated_at_ms": 1795810562638,
+ "generated_at": "2026-11-28T02:48:58Z",
+ "generated_at_ms": 1795834138581,
  "refresh_minutes": 10,
- "runner": "46062327270",
+ "runner": "46099812729",
  "online": 2,
  "total": 7,
  "sources": [
@@ -12,7 +12,7 @@
   {
    "name": "1服",
    "addr": "1.15.122.209:27015",
-   "server_name": "苹果果的抽象进阶包抗服[进阶包抗]",
+   "server_name": "抽象进阶包抗服1服[进阶包抗]",
    "map": "c2m1_highway",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
@@ -26,14 +26,14 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795810508062,
-   "elapsed_ms": 784
+   "checked_at_ms": 1795834083113,
+   "elapsed_ms": 801
   },
   {
    "name": "2服",
    "addr": "1.15.62.95:27015",
    "server_name": "抽象进阶包抗服2服[进阶包抗]",
-   "map": "c2m1_highway",
+   "map": "c4m2_sugarmill_a",
    "version": "2.2.4.3 10097 secure  (unknown)",
    "ok": true,
    "source": "rcon",
@@ -46,8 +46,8 @@
    "players_list": [],
    "bots": 0,
    "max_players": 0,
-   "checked_at_ms": 1795810508907,
-   "elapsed_ms": 844
+   "checked_at_ms": 1795834084591,
+   "elapsed_ms": 1477
   },
   {
    "name": "3服",
@@ -65,8 +65,8 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795810513786,
-   "elapsed_ms": 4879
+   "checked_at_ms": 1795834089730,
+   "elapsed_ms": 5139
   },
   {
    "name": "4服",
@@ -84,7 +84,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795810525999,
+   "checked_at_ms": 1795834101943,
    "elapsed_ms": 12212
   },
   {
@@ -103,7 +103,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795810538212,
+   "checked_at_ms": 1795834114155,
    "elapsed_ms": 12212
   },
   {
@@ -122,7 +122,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795810550425,
+   "checked_at_ms": 1795834126368,
    "elapsed_ms": 12212
   },
   {
@@ -141,7 +141,7 @@
    "players_list": [],
    "vac": false,
    "version": "",
-   "checked_at_ms": 1795810562638,
+   "checked_at_ms": 1795834138580,
    "elapsed_ms": 12212
   }
  ]
